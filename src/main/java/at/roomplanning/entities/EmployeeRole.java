@@ -10,22 +10,23 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
-@Entity (name = "EmployeeRole")
-@Table(uniqueConstraints = @UniqueConstraint(columnNames = {"id_role", "id_employee"}))
+@Entity(name = "EmployeeRole")
+@Table(uniqueConstraints = @UniqueConstraint(columnNames = { "id_role",
+		"id_employee" }))
 public class EmployeeRole {
-	
+
 	@Id
-	@GeneratedValue (strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	
-	@ManyToOne (cascade = CascadeType.ALL)
-	@JoinColumn (name = "id_role", nullable = false)
+
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "id_role", nullable = false)
 	private Role role;
-	
-	@ManyToOne (cascade = CascadeType.ALL)
-	@JoinColumn (name = "id_employee", nullable = false)
+
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "id_employee", nullable = false)
 	private Employee employee;
-	
+
 	private int evaluation;
 
 	public int getEvaluation() {

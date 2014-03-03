@@ -14,33 +14,28 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-
-@Entity (name = "Performance")
+@Entity(name = "Performance")
 public class Performance {
 
 	@Id
-	@GeneratedValue (strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	
+
 	private String name;
-	
-	@Temporal (TemporalType.TIMESTAMP)
+
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date date;
 
-	@ManyToMany (cascade = CascadeType.ALL)
+	@ManyToMany(cascade = CascadeType.ALL)
 	private Set<Employee> employees;
-	
-	@ManyToOne (cascade = CascadeType.ALL)
+
+	@ManyToOne(cascade = CascadeType.ALL)
 	private PerformanceType performanceType;
-	
-	
-	
-	
-	
+
 	public Performance() {
 		this.employees = new HashSet<Employee>();
 	}
-	
+
 	public Long getId() {
 		return id;
 	}
@@ -80,5 +75,5 @@ public class Performance {
 	public void setPerformanceType(PerformanceType performanceType) {
 		this.performanceType = performanceType;
 	}
-	
+
 }

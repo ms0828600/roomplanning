@@ -9,22 +9,22 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
-@Entity (name = "Role")
+@Entity(name = "Role")
 public class Role {
 
 	@Id
-	@GeneratedValue (strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	
+
 	private String name;
-	
-	@OneToMany (mappedBy = "employee")
+
+	@OneToMany(mappedBy = "employee")
 	private Set<EmployeeRole> employeeRoles;
 
 	public Role() {
 		this.employeeRoles = new HashSet<EmployeeRole>(10);
-	}	
-	
+	}
+
 	public Long getId() {
 		return id;
 	}
@@ -48,5 +48,5 @@ public class Role {
 	public void setEmployeeRoles(Set<EmployeeRole> employeeRoles) {
 		this.employeeRoles = employeeRoles;
 	}
-	
+
 }

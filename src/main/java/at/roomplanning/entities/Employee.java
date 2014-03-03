@@ -14,31 +14,31 @@ import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-@Entity (name = "Employee")
+@Entity(name = "Employee")
 public class Employee {
 
 	@Id
-	@GeneratedValue (strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	
+
 	private String firstName;
-	
+
 	private String familyName;
-	
-	@OneToMany (mappedBy = "role")
+
+	@OneToMany(mappedBy = "role")
 	private Set<EmployeeRole> employeeroles;
-	
-	@Temporal (TemporalType.DATE)
+
+	@Temporal(TemporalType.DATE)
 	private Date birthDate;
-	
-	@ManyToMany (cascade = CascadeType.ALL)
+
+	@ManyToMany(cascade = CascadeType.ALL)
 	private Set<Performance> performances;
 
 	public Employee() {
 		this.employeeroles = new HashSet<EmployeeRole>(3);
 		this.setPerformances(new HashSet<Performance>());
 	}
-	
+
 	public Long getId() {
 		return id;
 	}
@@ -87,5 +87,4 @@ public class Employee {
 		this.performances = performances;
 	}
 
-	
 }
