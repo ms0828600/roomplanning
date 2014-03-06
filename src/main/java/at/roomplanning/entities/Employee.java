@@ -33,12 +33,7 @@ public class Employee {
 	@Temporal(TemporalType.DATE)
 	private Date birthDate;
 
-	@ManyToMany(cascade = CascadeType.ALL)
-	@JoinTable(
-			name = "Employee_Performance",
-			joinColumns = @JoinColumn (name = "Employee_id", referencedColumnName = "id"),
-			inverseJoinColumns = @JoinColumn(name = "Performance_id", referencedColumnName = "id")
-	)
+	@ManyToMany(mappedBy="employees")
 	private Set<Performance> performances;
 
 	public Employee() {
