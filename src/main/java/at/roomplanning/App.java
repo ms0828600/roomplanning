@@ -176,6 +176,27 @@ public class App {
 			}
 		}
 		
+		
+		query = entityManager.createQuery("Select t FROM RehearsalType t WHERE t.name = 'Korrepetitionsprobe'");
+		@SuppressWarnings("unchecked")
+		ArrayList<RehearsalType> res = (ArrayList<RehearsalType>) query.getResultList();
+		RehearsalType start = (res.size() > 0) ? res.get(0) : null;
+		if ( start != null) {
+			while (start.getNext() != null) {
+				String name = start.getName();
+				System.out.println(name);
+				if (start.getPrevious() != null && start.getPrevious().size() > 1) {
+					for (RehearsalType tmp : start.getPrevious()) {
+						if (tmp.getName().equals(name)) {
+							continue;
+						}
+						System.out.println(tmp.getName());
+					}
+				}
+				start = start.getNext();
+			}
+		}
+		
 		entityManager.close();
 		
 		entityManagerFactory.close();
