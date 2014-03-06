@@ -13,7 +13,7 @@
 			<property name="hibernate.connection.password" value="" />
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
 			<property name="hibernate.show_sql" value="false" />
-			<property name="hibernate.hbm2ddl.auto" value="create"/>
+			<property name="hibernate.hbm2ddl.auto" value="create-drop"/>
 			<property name="javax.persistence.validation.mode" value="NONE"/>
 			<!-- <property name="hibernate.ejb.interceptor" value="dst.ass1.jpa.interceptor.SQLInterceptor"/>
 			<property name="hibernate.query.factory_class" value="org.hibernate.hql.classic.ClassicQueryTranslatorFactory" /> -->

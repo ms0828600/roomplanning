@@ -77,6 +77,7 @@ public class App {
 		
 		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory( "at.roomplanning" );
 		EntityManager entityManager = entityManagerFactory.createEntityManager();
+		
 		entityManager.getTransaction().begin();
 		entityManager.persist( emp );
 		entityManager.persist( drummer );

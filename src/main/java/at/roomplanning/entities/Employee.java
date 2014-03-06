@@ -9,6 +9,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
@@ -32,6 +34,11 @@ public class Employee {
 	private Date birthDate;
 
 	@ManyToMany(cascade = CascadeType.ALL)
+	@JoinTable(
+			name = "Employee_Performance",
+			joinColumns = @JoinColumn (name = "Employee_id", referencedColumnName = "id"),
+			inverseJoinColumns = @JoinColumn(name = "Performance_id", referencedColumnName = "id")
+	)
 	private Set<Performance> performances;
 
 	public Employee() {
