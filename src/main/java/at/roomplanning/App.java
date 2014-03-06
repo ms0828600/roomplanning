@@ -14,6 +14,8 @@ import at.roomplanning.entities.Employee;
 import at.roomplanning.entities.EmployeeRole;
 import at.roomplanning.entities.Performance;
 import at.roomplanning.entities.PerformanceType;
+import at.roomplanning.entities.Rehearsal;
+import at.roomplanning.entities.RehearsalType;
 import at.roomplanning.entities.Role;
 
 /**
@@ -78,12 +80,90 @@ public class App {
 		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory( "at.roomplanning" );
 		EntityManager entityManager = entityManagerFactory.createEntityManager();
 		
+		// Rehearsal types for Correpetition2premiere
+		RehearsalType correpetition = new RehearsalType();
+		correpetition.setName("Korrepetitionsprobe");
+		correpetition.setNumber(3);
+		correpetition.setPrevious(null);
+		
+		RehearsalType ensemble = new RehearsalType();
+		ensemble.setName("Ensembleprobe");
+		ensemble.setNumber(2);
+		ensemble.getPrevious().add(correpetition);
+		correpetition.setNext(ensemble);
+		
+		RehearsalType scenes = new RehearsalType();
+		scenes.setName("Szenische Proben");
+		scenes.setNumber(2);
+		scenes.getPrevious().add(ensemble);
+		ensemble.setNext(scenes);
+		
+		RehearsalType chor = new RehearsalType();
+		chor.setName("Chor allein Probe");
+		chor.setNumber(2);
+		chor.setPrevious(null);
+		
+		RehearsalType orchester_alone = new RehearsalType();
+		orchester_alone.setName("Orchester allein Probe");
+		orchester_alone.setNumber(2);
+		orchester_alone.setPrevious(null);
+		
+		
+		RehearsalType stage = new RehearsalType();
+		stage.setName("Bühnenprobe");
+		stage.setNumber(3);
+		stage.getPrevious().add(scenes);
+		stage.getPrevious().add(chor);
+		stage.getPrevious().add(orchester_alone);
+		chor.setNext(stage);
+		orchester_alone.setNext(stage);
+		scenes.setNext(stage);
+		
+		RehearsalType piano = new RehearsalType();
+		piano.setName("Klavierprobe");
+		piano.setNumber(1);
+		piano.getPrevious().add(stage);
+		stage.setNext(piano);
+		
+		RehearsalType orchesterMain = new RehearsalType();
+		orchesterMain.setName("Orchesterhauptprobe");
+		orchesterMain.setNumber(1);
+		orchesterMain.getPrevious().add(piano);
+		piano.setNext(orchesterMain);
+		
+		RehearsalType general = new RehearsalType();
+		general.setName("Generalprobe");
+		general.setNumber(2);
+		general.getPrevious().add(orchesterMain);
+		orchesterMain.setNext(general);
+		
+		RehearsalType premiere = new RehearsalType();
+		premiere.setName("Premiere");
+		premiere.setNumber(1);
+		premiere.getPrevious().add(general);
+		premiere.setNext(null);
+		general.setNext(premiere);
+		
+		
+		
 		entityManager.getTransaction().begin();
 		entityManager.persist( emp );
 		entityManager.persist( drummer );
 		entityManager.persist( singer );
 		entityManager.persist( emp_drummer );
 		entityManager.persist( emp_singer );
+		
+		entityManager.persist( correpetition );
+		entityManager.persist( ensemble );
+		entityManager.persist( orchester_alone );
+		entityManager.persist( chor );
+		entityManager.persist( stage );
+		entityManager.persist( scenes );
+		entityManager.persist( piano );
+		entityManager.persist( general );
+		entityManager.persist( premiere );
+		
+		
 		entityManager.getTransaction().commit();
 		
 		Query query = entityManager.createQuery("SELECT e FROM Employee e");

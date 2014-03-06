@@ -13,6 +13,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -29,18 +30,17 @@ public class Performance {
 	private Date date;
 
 	@ManyToMany(cascade = CascadeType.ALL)
-	@JoinTable(
-			name = "Employee_Performance",
-			joinColumns = @JoinColumn(name = "Performance_id", referencedColumnName = "id"),
-			inverseJoinColumns = @JoinColumn (name = "Employee_id", referencedColumnName = "id")
-	)
 	private Set<Employee> employees;
 
 	@ManyToOne(cascade = CascadeType.ALL)
 	private PerformanceType performanceType;
 
+	@OneToMany (cascade = CascadeType.ALL, mappedBy = "performance")
+	private Set<Rehearsal> rehearsals;
+	
 	public Performance() {
 		this.employees = new HashSet<Employee>();
+		this.setRehearsals(new HashSet<Rehearsal>());
 	}
 
 	public Long getId() {
@@ -81,6 +81,14 @@ public class Performance {
 
 	public void setPerformanceType(PerformanceType performanceType) {
 		this.performanceType = performanceType;
+	}
+
+	public Set<Rehearsal> getRehearsals() {
+		return rehearsals;
+	}
+
+	public void setRehearsals(HashSet<Rehearsal> rehearsals) {
+		this.rehearsals = rehearsals;
 	}
 
 }

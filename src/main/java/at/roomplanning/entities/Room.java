@@ -1,9 +1,13 @@
 package at.roomplanning.entities;
 
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 
 @Entity (name = "Room")
 public class Room {
@@ -15,6 +19,9 @@ public class Room {
 	private String name;
 	
 	private String location;
+	
+	@ManyToMany (cascade = CascadeType.ALL)
+	private Set<RehearsalType> rehearsalTypes;
 
 	public Long getId() {
 		return id;
@@ -38,6 +45,14 @@ public class Room {
 
 	public void setLocation(String location) {
 		this.location = location;
+	}
+
+	public Set<RehearsalType> getRehearsalTypes() {
+		return rehearsalTypes;
+	}
+
+	public void setRehearsalTypes(Set<RehearsalType> rehearsalTypes) {
+		this.rehearsalTypes = rehearsalTypes;
 	}
 	
 }

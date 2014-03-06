@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -18,6 +19,9 @@ public class Rehearsal {
 	
 	@Temporal (TemporalType.DATE)
 	private Date date;
+	
+	@ManyToOne
+	private Performance performance;
 
 	public Long getId() {
 		return id;
@@ -33,6 +37,14 @@ public class Rehearsal {
 
 	public void setDate(Date date) {
 		this.date = date;
+	}
+
+	public Performance getPerformance() {
+		return performance;
+	}
+
+	public void setPerformance(Performance performance) {
+		this.performance = performance;
 	}
 	
 }

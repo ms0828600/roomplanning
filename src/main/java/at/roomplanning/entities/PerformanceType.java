@@ -10,6 +10,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
 @Entity(name = "PerformanceType")
@@ -31,6 +32,9 @@ public class PerformanceType {
 
 	@OneToMany(cascade = CascadeType.ALL)
 	private Set<RehearsalType> rehearsalTypes;
+	
+	@ManyToMany (cascade = CascadeType.ALL)
+	private Set<Room> rooms;	
 
 	public PerformanceType() {
 		this.performances = new HashSet<Performance>();
