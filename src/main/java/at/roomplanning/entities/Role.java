@@ -3,10 +3,12 @@ package at.roomplanning.entities;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
 @Entity(name = "Role")
@@ -20,9 +22,13 @@ public class Role {
 
 	@OneToMany(mappedBy = "employee")
 	private Set<EmployeeRole> employeeRoles;
+	
+	@ManyToMany (cascade = CascadeType.ALL)
+	private Set<RehearsalType> rehearsalTypes;
 
 	public Role() {
 		this.employeeRoles = new HashSet<EmployeeRole>(10);
+		this.rehearsalTypes = new HashSet<RehearsalType>();
 	}
 
 	public Long getId() {
@@ -47,6 +53,14 @@ public class Role {
 
 	public void setEmployeeRoles(Set<EmployeeRole> employeeRoles) {
 		this.employeeRoles = employeeRoles;
+	}
+
+	public Set<RehearsalType> getRehearsalTypes() {
+		return rehearsalTypes;
+	}
+
+	public void setRehearsalTypes(Set<RehearsalType> rehearsalTypes) {
+		this.rehearsalTypes = rehearsalTypes;
 	}
 
 }

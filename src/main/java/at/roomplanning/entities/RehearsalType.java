@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
@@ -36,10 +37,14 @@ public class RehearsalType {
 
 	@OneToMany(cascade = CascadeType.ALL)
 	private Set<PerformanceType> performanceTypes;
+	
+	@ManyToMany (cascade = CascadeType.ALL)
+	private Set<Role> roles;
 
 	public RehearsalType() {
 		this.performanceTypes = new HashSet<PerformanceType>();
 		this.previous = new HashSet<RehearsalType>();
+		this.roles = new HashSet<Role>();
 	}
 
 	public Long getId() {
