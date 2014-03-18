@@ -18,7 +18,7 @@ public class Rehearsal {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
-	@Temporal (TemporalType.DATE)
+	@Temporal (TemporalType.TIMESTAMP)
 	private Date date;
 	
 	@ManyToOne
