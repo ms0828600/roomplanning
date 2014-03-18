@@ -17,6 +17,7 @@ import at.roomplanning.entities.PerformanceType;
 import at.roomplanning.entities.Rehearsal;
 import at.roomplanning.entities.RehearsalType;
 import at.roomplanning.entities.Role;
+import at.roomplanning.entities.Room;
 
 /**
  * http://stackoverflow.com/questions/5127129/mapping-many-to-many-association-table-with-extra-columns
@@ -34,8 +35,8 @@ public class App {
 		
 		// employee
 		Employee emp = new Employee();
-		emp.setFirstName("Martin");
-		emp.setFamilyName("Schliefellner");
+		emp.setFirstName("Max");
+		emp.setFamilyName("Mustermann");
 		Calendar calendar = GregorianCalendar.getInstance();
 		calendar.set(1988, 10, 4);
 		emp.setBirthDate(calendar.getTime());
@@ -144,6 +145,51 @@ public class App {
 		premiere.setNext(null);
 		general.setNext(premiere);
 		
+				
+		// Rooms
+		Room room1 = new Room();
+		room1.setName("Proberaum Nr.1");
+		room1.setLocation("Wien, 1. Bezirk,...");
+		room1.getRehearsalTypes().add(correpetition);
+		room1.getRehearsalTypes().add(scenes);
+		room1.getRehearsalTypes().add(stage);
+		
+		Room room2 = new Room();
+		room2.setName("Proberaum Nr.2");
+		room2.setLocation("Wien, 2. Bezirk,...");
+		room2.getRehearsalTypes().add(premiere);
+		room2.getRehearsalTypes().add(general);
+		room2.getRehearsalTypes().add(orchesterMain);
+		room2.getRehearsalTypes().add(orchester_alone);
+		room2.getRehearsalTypes().add(ensemble);
+		room2.getRehearsalTypes().add(piano);
+		room2.getRehearsalTypes().add(chor);
+		
+		// Rehearsal
+		Rehearsal rehearsal1 = new Rehearsal();
+		calendar.set(2014, 05, 4);
+		rehearsal1.setDate(calendar.getTime());
+		rehearsal1.setPerformance(performance);
+		rehearsal1.setRoom(room1);
+		rehearsal1.setRehearsalType(correpetition);
+		performance.getRehearsals().add(rehearsal1);
+		rehearsal1.setPerformance(performance);
+		
+		Rehearsal rehearsal2 = new Rehearsal();
+		calendar.set(2014, 05, 9);
+		rehearsal2.setDate(calendar.getTime());
+		rehearsal2.setPerformance(performance);
+		rehearsal2.setRoom(room2);
+		rehearsal2.setRehearsalType(ensemble);
+		performance.getRehearsals().add(rehearsal2);	
+		rehearsal2.setPerformance(performance);
+		
+		room1.getRehearsals().add(rehearsal1);
+		room2.getRehearsals().add(rehearsal2);
+		
+		ensemble.getRehearsals().add(rehearsal2);
+		correpetition.getRehearsals().add(rehearsal1);
+		
 		
 		
 		entityManager.getTransaction().begin();
@@ -162,8 +208,11 @@ public class App {
 		entityManager.persist( piano );
 		entityManager.persist( general );
 		entityManager.persist( premiere );
-		
-		
+		entityManager.persist(performance);
+		entityManager.persist(room1);
+		entityManager.persist(room2);
+		entityManager.persist(rehearsal1);
+		entityManager.persist(rehearsal2);
 		entityManager.getTransaction().commit();
 		
 		Query query = entityManager.createQuery("SELECT e FROM Employee e");
@@ -199,7 +248,7 @@ public class App {
 		
 		entityManager.close();
 		
-		entityManagerFactory.close();
+		//entityManagerFactory.close();
 		
 		/*
 		Session s = sessionFactory.openSession();

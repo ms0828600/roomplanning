@@ -35,16 +35,24 @@ public class RehearsalType {
 	// before we can go to the next node
 	private int number;
 
-	@OneToMany(cascade = CascadeType.ALL)
+	@OneToMany (cascade = CascadeType.ALL)
 	private Set<PerformanceType> performanceTypes;
 	
 	@ManyToMany (cascade = CascadeType.ALL)
 	private Set<Role> roles;
+	
+	@ManyToMany (cascade = CascadeType.ALL)
+	private Set<Room> rooms;	
+	
+	@OneToMany (cascade = CascadeType.ALL)
+	private Set<Rehearsal> rehearsals;
 
 	public RehearsalType() {
 		this.performanceTypes = new HashSet<PerformanceType>();
 		this.previous = new HashSet<RehearsalType>();
 		this.roles = new HashSet<Role>();
+		this.rehearsals = new HashSet<Rehearsal>();
+		this.rooms = new HashSet<Room>();
 	}
 
 	public Long getId() {
@@ -102,5 +110,30 @@ public class RehearsalType {
 	public void setNumber(int number) {
 		this.number = number;
 	}
+
+	public Set<Role> getRoles() {
+		return roles;
+	}
+
+	public void setRoles(Set<Role> roles) {
+		this.roles = roles;
+	}
+
+	public Set<Rehearsal> getRehearsals() {
+		return rehearsals;
+	}
+
+	public void setRehearsals(Set<Rehearsal> rehearsals) {
+		this.rehearsals = rehearsals;
+	}
+
+	public Set<Room> getRooms() {
+		return rooms;
+	}
+
+	public void setRooms(Set<Room> rooms) {
+		this.rooms = rooms;
+	}
+
 
 }

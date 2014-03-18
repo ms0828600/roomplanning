@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -22,6 +23,12 @@ public class Rehearsal {
 	
 	@ManyToOne
 	private Performance performance;
+	
+	@OneToOne
+	private Room room;
+	
+	@OneToOne
+	private RehearsalType rehearsalType;
 
 	public Long getId() {
 		return id;
@@ -45,6 +52,22 @@ public class Rehearsal {
 
 	public void setPerformance(Performance performance) {
 		this.performance = performance;
+	}
+
+	public Room getRoom() {
+		return room;
+	}
+
+	public void setRoom(Room room) {
+		this.room = room;
+	}
+
+	public RehearsalType getRehearsalType() {
+		return rehearsalType;
+	}
+
+	public void setRehearsalType(RehearsalType rehearsalType) {
+		this.rehearsalType = rehearsalType;
 	}
 	
 }
