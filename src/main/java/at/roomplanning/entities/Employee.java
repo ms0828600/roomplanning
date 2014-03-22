@@ -23,6 +23,8 @@ public class Employee {
 	private String firstName;
 
 	private String familyName;
+	
+	//TODO: ENUM zugekauft/intern/...
 
 	@OneToMany(mappedBy = "role")
 	private Set<EmployeeRole> employeeroles;

@@ -27,6 +27,9 @@ public class Rehearsal {
 	@OneToOne
 	private Room room;
 	
+	// Time in minutes
+	private int duration;
+	
 	@OneToOne
 	private RehearsalType rehearsalType;
 
@@ -69,5 +72,14 @@ public class Rehearsal {
 	public void setRehearsalType(RehearsalType rehearsalType) {
 		this.rehearsalType = rehearsalType;
 	}
+
+	public int getDuration() {
+		return duration;
+	}
+
+	public void setDuration(int duration) {
+		this.duration = duration;
+	}
+
 	
 }

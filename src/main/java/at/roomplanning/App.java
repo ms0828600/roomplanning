@@ -33,86 +33,78 @@ public class App {
 */
 		
 		
-		// employee
-		Employee emp = new Employee();
-		emp.setFirstName("Max");
-		emp.setFamilyName("Mustermann");
+		// Mitarbeiter anlegen
+		Employee jonasKaufmann = new Employee();
+		jonasKaufmann.setFirstName("Jonas");
+		jonasKaufmann.setFamilyName("Kaufmann");
 		Calendar calendar = GregorianCalendar.getInstance();
 		calendar.set(1988, 10, 4);
-		emp.setBirthDate(calendar.getTime());
+		jonasKaufmann.setBirthDate(calendar.getTime());
 		
-		// roles
-		Role drummer = new Role();
-		drummer.setName("Drummer");
+		// Rolle/Funktion erstellen
+		Role tenor = new Role();
+		tenor.setName("Tenor");
+	
 		
-		Role singer = new Role();
-		singer.setName("Singer");		
+		// Zuweisung Rolle <-> Mitarbeiter
+		EmployeeRole emp_tenor = new EmployeeRole();
+		emp_tenor.setEmployee(jonasKaufmann);
+		emp_tenor.setRole(tenor);
+		emp_tenor.setEvaluation(1);
+		jonasKaufmann.getEmployeeroles().add(emp_tenor);
+		tenor.getEmployeeRoles().add(emp_tenor);
 		
-		// set roles
-		EmployeeRole emp_drummer = new EmployeeRole();
-		emp_drummer.setEmployee(emp);
-		emp_drummer.setRole(drummer);
 
-		EmployeeRole emp_singer = new EmployeeRole();
-		emp_singer.setEmployee(emp);
-		emp_singer.setRole(singer);	
-		
-		emp.getEmployeeroles().add(emp_drummer);
-		emp.getEmployeeroles().add(emp_singer);
-		
-		drummer.getEmployeeRoles().add(emp_drummer);
-		singer.getEmployeeRoles().add(emp_singer);
-		
-		// performance
+		// Aufführung erstellen
 		Performance performance = new Performance();
-		performance.setName("Carmen");
+		performance.setName("Salome");
 		calendar.set(2014, 10, 4, 20, 0, 0);
 		performance.setDate(calendar.getTime());
 		
-		emp.getPerformances().add(performance);
-		performance.getEmployees().add(emp);
+		// Aufführung dem Mitarbeiter zuweisen, und
+		// umgekehrt
+		jonasKaufmann.getPerformances().add(performance);
+		performance.getEmployees().add(jonasKaufmann);
 		
-		// performance type
+		//------------------------------------------------------------- Der Teil ist FERTIG
 		PerformanceType perfType = new PerformanceType();
 		perfType.setType(PerformanceType.Type.CORREPETITION2PREMIERE);
 		perfType.getPerformances().add(performance);
 		performance.setPerformanceType(perfType);
 		
-		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory( "at.roomplanning" );
-		EntityManager entityManager = entityManagerFactory.createEntityManager();
-		
+
 		// Rehearsal types for Correpetition2premiere
 		RehearsalType correpetition = new RehearsalType();
 		correpetition.setName("Korrepetitionsprobe");
-		correpetition.setNumber(3);
+		correpetition.setNumber(10);
 		correpetition.setPrevious(null);
 		
 		RehearsalType ensemble = new RehearsalType();
 		ensemble.setName("Ensembleprobe");
-		ensemble.setNumber(2);
+		ensemble.setNumber(1);
 		ensemble.getPrevious().add(correpetition);
 		correpetition.setNext(ensemble);
 		
 		RehearsalType scenes = new RehearsalType();
 		scenes.setName("Szenische Proben");
-		scenes.setNumber(2);
+		scenes.setNumber(20);
 		scenes.getPrevious().add(ensemble);
 		ensemble.setNext(scenes);
 		
 		RehearsalType chor = new RehearsalType();
 		chor.setName("Chor allein Probe");
-		chor.setNumber(2);
+		chor.setNumber(4);
 		chor.setPrevious(null);
 		
 		RehearsalType orchester_alone = new RehearsalType();
 		orchester_alone.setName("Orchester allein Probe");
-		orchester_alone.setNumber(2);
+		orchester_alone.setNumber(4);
 		orchester_alone.setPrevious(null);
 		
 		
 		RehearsalType stage = new RehearsalType();
 		stage.setName("Bühnenprobe");
-		stage.setNumber(3);
+		stage.setNumber(8);
 		stage.getPrevious().add(scenes);
 		stage.getPrevious().add(chor);
 		stage.getPrevious().add(orchester_alone);
@@ -122,19 +114,19 @@ public class App {
 		
 		RehearsalType piano = new RehearsalType();
 		piano.setName("Klavierprobe");
-		piano.setNumber(1);
+		piano.setNumber(4);
 		piano.getPrevious().add(stage);
 		stage.setNext(piano);
 		
 		RehearsalType orchesterMain = new RehearsalType();
 		orchesterMain.setName("Orchesterhauptprobe");
-		orchesterMain.setNumber(1);
+		orchesterMain.setNumber(2);
 		orchesterMain.getPrevious().add(piano);
 		piano.setNext(orchesterMain);
 		
 		RehearsalType general = new RehearsalType();
 		general.setName("Generalprobe");
-		general.setNumber(2);
+		general.setNumber(1);
 		general.getPrevious().add(orchesterMain);
 		orchesterMain.setNext(general);
 		
@@ -145,35 +137,35 @@ public class App {
 		premiere.setNext(null);
 		general.setNext(premiere);
 		
+		//------------------------------------------------------------- Der Teil ist FERTIG ENDE
+		
 				
-		// Rooms
+		// Räume erstellen
 		Room room1 = new Room();
-		room1.setName("Proberaum Nr.1");
-		room1.setLocation("Wien, 1. Bezirk,...");
+		room1.setName("Korrepetitionsraum");
+		room1.setLocation("1010 Wien..");
 		room1.getRehearsalTypes().add(correpetition);
-		room1.getRehearsalTypes().add(scenes);
-		room1.getRehearsalTypes().add(stage);
+
 		
 		Room room2 = new Room();
-		room2.setName("Proberaum Nr.2");
-		room2.setLocation("Wien, 2. Bezirk,...");
-		room2.getRehearsalTypes().add(premiere);
-		room2.getRehearsalTypes().add(general);
-		room2.getRehearsalTypes().add(orchesterMain);
-		room2.getRehearsalTypes().add(orchester_alone);
-		room2.getRehearsalTypes().add(ensemble);
-		room2.getRehearsalTypes().add(piano);
-		room2.getRehearsalTypes().add(chor);
+		room2.setName("Eduard Wächter Probebühne");
+		room2.setLocation("1010 Wien");
+		room2.getRehearsalTypes().add(scenes);
 		
-		// Rehearsal
+		Room room3 = new Room();
+		//...
+		
+		
+		// Proben erstellen
 		Rehearsal rehearsal1 = new Rehearsal();
-		calendar.set(2014, 05, 4);
-		rehearsal1.setDate(calendar.getTime());
-		rehearsal1.setPerformance(performance);
-		rehearsal1.setRoom(room1);
-		rehearsal1.setRehearsalType(correpetition);
-		performance.getRehearsals().add(rehearsal1);
-		rehearsal1.setPerformance(performance);
+		calendar.set(2014, 05, 4); // datum erzeugen
+		rehearsal1.setDuration(120); // dauer in minuten
+		rehearsal1.setDate(calendar.getTime()); // datum setzen
+		rehearsal1.setPerformance(performance); // aufführungen setzen
+		rehearsal1.setRoom(room1); // raum zuweisen für die probe
+		rehearsal1.setRehearsalType(correpetition); // typ zuweisen
+		performance.getRehearsals().add(rehearsal1);  // setze probe zur aufweisung
+		rehearsal1.setPerformance(performance); // setze aufführung für die probe
 		
 		Rehearsal rehearsal2 = new Rehearsal();
 		calendar.set(2014, 05, 9);
@@ -184,20 +176,24 @@ public class App {
 		performance.getRehearsals().add(rehearsal2);	
 		rehearsal2.setPerformance(performance);
 		
+		// proben den räumen zuordnen
 		room1.getRehearsals().add(rehearsal1);
 		room2.getRehearsals().add(rehearsal2);
 		
+		// probetypen die proben hinzufügen
 		ensemble.getRehearsals().add(rehearsal2);
 		correpetition.getRehearsals().add(rehearsal1);
+
+		
+		
+		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory( "at.roomplanning" );
+		EntityManager entityManager = entityManagerFactory.createEntityManager();
 		
 		
 		
 		entityManager.getTransaction().begin();
-		entityManager.persist( emp );
-		entityManager.persist( drummer );
-		entityManager.persist( singer );
-		entityManager.persist( emp_drummer );
-		entityManager.persist( emp_singer );
+		entityManager.persist( jonasKaufmann );
+		entityManager.persist( tenor );
 		
 		entityManager.persist( correpetition );
 		entityManager.persist( ensemble );
