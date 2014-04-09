@@ -25,7 +25,7 @@ import at.roomplanning.entities.Room;
  */
 public class App {
 	public static void main(String[] args) {
-		System.out.println("Hello World!");
+		System.out.println("Hello World!!");
 		/*Configuration configuration = new Configuration();
 		configuration.configure();
 		ServiceRegistry serviceRegistry = new ServiceRegistryBuilder().applySettings(configuration.getProperties()).buildServiceRegistry();
