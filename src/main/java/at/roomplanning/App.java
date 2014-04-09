@@ -32,27 +32,51 @@ public class App {
 		SessionFactory sessionFactory = configuration.buildSessionFactory(serviceRegistry);
 */
 		
-		
+		Calendar calendar = GregorianCalendar.getInstance();
+
 		// Mitarbeiter anlegen
 		Employee jonasKaufmann = new Employee();
 		jonasKaufmann.setFirstName("Jonas");
 		jonasKaufmann.setFamilyName("Kaufmann");
-		Calendar calendar = GregorianCalendar.getInstance();
 		calendar.set(1988, 10, 4);
 		jonasKaufmann.setBirthDate(calendar.getTime());
+		
+		Employee NeilShicoff = new Employee();
+		NeilShicoff.setFirstName("Neil");
+		NeilShicoff.setFamilyName("Shicoff");
+		calendar.set(1989, 05, 25);
+		NeilShicoff.setBirthDate(calendar.getTime());
 		
 		// Rolle/Funktion erstellen
 		Role tenor = new Role();
 		tenor.setName("Tenor");
+		
+		Role Bariton = new Role();
+		Bariton.setName("Bariton");
+		
 	
 		
 		// Zuweisung Rolle <-> Mitarbeiter
-		EmployeeRole emp_tenor = new EmployeeRole();
-		emp_tenor.setEmployee(jonasKaufmann);
-		emp_tenor.setRole(tenor);
-		emp_tenor.setEvaluation(1);
-		jonasKaufmann.getEmployeeroles().add(emp_tenor);
-		tenor.getEmployeeRoles().add(emp_tenor);
+		EmployeeRole jonasKaufmann_tenor = new EmployeeRole();
+		jonasKaufmann_tenor.setEmployee(jonasKaufmann);
+		jonasKaufmann_tenor.setRole(tenor);
+		jonasKaufmann_tenor.setEvaluation(1);
+		EmployeeRole jonasKaufmann_Bariton= new EmployeeRole();
+		jonasKaufmann_Bariton.setEmployee(jonasKaufmann);
+		jonasKaufmann_Bariton.setRole(Bariton);
+		jonasKaufmann_Bariton.setEvaluation(3);
+		jonasKaufmann.getEmployeeroles().add(jonasKaufmann_Bariton);
+		jonasKaufmann.getEmployeeroles().add(jonasKaufmann_tenor);
+		tenor.getEmployeeRoles().add(jonasKaufmann_tenor);
+		
+		Bariton.getEmployeeRoles().add(jonasKaufmann_Bariton);
+		
+		EmployeeRole neilShicoff_Bariton = new EmployeeRole();
+		neilShicoff_Bariton.setEmployee(NeilShicoff);
+		neilShicoff_Bariton.setRole(Bariton);
+		neilShicoff_Bariton.setEvaluation(1);
+		NeilShicoff.getEmployeeroles().add(neilShicoff_Bariton);
+		Bariton.getEmployeeRoles().add(neilShicoff_Bariton);
 		
 
 		// Aufführung erstellen
@@ -193,7 +217,14 @@ public class App {
 		
 		entityManager.getTransaction().begin();
 		entityManager.persist( jonasKaufmann );
+		entityManager.persist(NeilShicoff);
+		
 		entityManager.persist( tenor );
+		entityManager.persist(Bariton);
+		
+		entityManager.persist( jonasKaufmann_tenor );
+		entityManager.persist(jonasKaufmann_Bariton);
+		entityManager.persist( neilShicoff_Bariton );
 		
 		entityManager.persist( correpetition );
 		entityManager.persist( ensemble );
