@@ -47,6 +47,14 @@ public class App {
 		calendar.set(1989, 05, 25);
 		NeilShicoff.setBirthDate(calendar.getTime());
 		
+		Employee WolfgangBankl = new Employee();
+		WolfgangBankl.setFirstName(Wolfgang);
+		WolfgangBankl.setFamilyName(Bankl);
+		calendar.set(1979, 10, 5);
+		WolfgangBankl.setBirthDate(calendar.getTime());
+		
+		
+		
 		// Rolle/Funktion erstellen
 		Role tenor = new Role();
 		tenor.setName("Tenor");
