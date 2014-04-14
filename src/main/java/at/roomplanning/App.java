@@ -226,6 +226,7 @@ public class App {
 		entityManager.getTransaction().begin();
 		entityManager.persist( jonasKaufmann );
 		entityManager.persist(NeilShicoff);
+		entityManager.persist(WolfgangBankl);
 		
 		entityManager.persist( tenor );
 		entityManager.persist(Bariton);
