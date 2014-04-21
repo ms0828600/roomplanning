@@ -69,6 +69,10 @@ public class App {
 		Role Bariton = new Role();
 		Bariton.setName("Bariton");
 		
+		Role Sopran = new Role();
+		Sopran.setName("Sopran");
+		
+		
 	
 		
 		// Zuweisung Rolle <-> Mitarbeiter
