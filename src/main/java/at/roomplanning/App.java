@@ -97,6 +97,13 @@ public class App {
 		NeilShicoff.getEmployeeroles().add(neilShicoff_Bariton);
 		Bariton.getEmployeeRoles().add(neilShicoff_Bariton);
 		
+		EmployeeRole EditaGruberova = new EmployeeRole();
+		EditaGruberova_Sopran.setEmployee(EditaGruberova);
+		EditaGruberova_Sopran.setRole(Sopran);
+		EditaGruberova.settEvaluation(1);
+		EditaGruberova.getEmployeerole().add(EditaGruberova_Sopran);
+		Sopran.getEmployeeRoles().add(EditaGruberova);
+		
 
 		// Aufführung erstellen
 		Performance performance = new Performance();
