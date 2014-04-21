@@ -53,6 +53,13 @@ public class App {
 		calendar.set(1979, 10, 5);
 		WolfgangBankl.setBirthDate(calendar.getTime());
 		
+		Employee EditaGruberova = new Employee();
+		EditaGruberova.setFirstName(Edita);
+		EditaGruberova.setFamilyName(Gruberova);
+		calendar.set(1961,  10, 5);
+		EditaGruberova.setBirthDate( calendar.getTime());
+		
+		
 		
 		
 		// Rolle/Funktion erstellen
