@@ -234,6 +234,7 @@ public class App {
 		entityManager.persist( jonasKaufmann );
 		entityManager.persist(NeilShicoff);
 		entityManager.persist(WolfgangBankl);
+		entityManager.persist(EditaGruberova);
 		
 		entityManager.persist( tenor );
 		entityManager.persist(Bariton);
