@@ -119,6 +119,9 @@ public class App {
 		Role Bariton = new Role();
 		Bariton.setName("Bariton");
 		
+		Role Bass = new Role()
+		Bass.setName("Bass");
+		
 		Role Sopran = new Role();
 		Sopran.setName("Sopran");
 		
