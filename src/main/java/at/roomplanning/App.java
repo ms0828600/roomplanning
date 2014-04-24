@@ -71,6 +71,14 @@ public class App {
 		calendar.set(1972, 10,5);
 		GuentherGroissboeck.setBirthDate(Calendar.getTime());
 		
+		Employee HerwigPecoraro = new Employee();
+		HerwigPecoraro.setfirstName(Herwig);
+		HerwigPecoraro.setFamilyName(Pecoraro);
+		calendar.set(1960,  10,5);
+		HerwigPecoraro.setBirthDate(Calendar.getTime());;
+		
+		
+		
 		
 		
 		
