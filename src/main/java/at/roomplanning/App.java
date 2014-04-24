@@ -213,6 +213,14 @@ public class App {
 		AdamPlachetka.getEmployeeroles().add(AdamPlachetka_Bass);
 		Bass.getEmployeeRoles().add(AdamPlachetka_Bass);
 		
+		EmployeeRole ValentinaNafornita_Sopran = new EmployeeRole();
+		ValentinaNafornita_Sopran.setEmployee(ValentinaNafornita);
+		ValentinaNafornita_Sopran.setRole(Bass);
+		ValentinaNafornita_Sopran.setEvaluation(1);
+		ValentinaNafornita.getEmployeeroles().add(ValentinaNafornita_Sopran);
+		Sopran.getEmployeeRoles().add(ValentinaNafornita_Sopran);
+		
+		
 		// Aufführung erstellen
 		Performance performance = new Performance();
 		performance.setName("Salome");
