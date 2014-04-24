@@ -63,7 +63,16 @@ public class App {
 		PlacidoDomingo.setFirstName(Placido);
 		PlacidoDomingo.setFamilyName(Domingo);
 		calendar.set(1960,  10, 5);
-		PlacidoDomingo.setBirthDate(calendar.getTime());;
+		PlacidoDomingo.setBirthDate(calendar.getTime());
+		
+		Employee GuentherGroissboeck = new Employee();
+		GuentherGroissboeck.setFirstName(Guenther);
+		GuentherGroissboeck.setFamilyName(Groissboeck);
+		calendar.set(1972, 10,5);
+		GuentherGroissboeck.setBirthDate(Calendar.getTime());
+		
+		
+		
 		
 		
 		
