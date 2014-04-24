@@ -302,6 +302,8 @@ public class App {
 		entityManager.persist(AnitaHartig);
 		entityManager.persist(StephanieHoutzeel);
 		entityManager.persist(AdamPlachetka);
+		entityManager.persist(ValentinaNafornita);
+		
 		
 		
 		
