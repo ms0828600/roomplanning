@@ -69,13 +69,19 @@ public class App {
 		GuentherGroissboeck.setFirstName(Guenther);
 		GuentherGroissboeck.setFamilyName(Groissboeck);
 		calendar.set(1972, 10,5);
-		GuentherGroissboeck.setBirthDate(Calendar.getTime());
+		GuentherGroissboeck.setBirthDate(calendar.getTime());
 		
 		Employee HerwigPecoraro = new Employee();
 		HerwigPecoraro.setfirstName(Herwig);
 		HerwigPecoraro.setFamilyName(Pecoraro);
 		calendar.set(1960,  10,5);
-		HerwigPecoraro.setBirthDate(Calendar.getTime());;
+		HerwigPecoraro.setBirthDate(calendar.getTime());
+		
+		Employee AnitaHartig = new Employee();
+		AnitaHartig.setfirstName(Anita);
+		AnitaHartig.setFamilyName(Hartig);
+		calendar.set(180,  10,5);
+		AnitaHartig.setBirthDate(calendar.getTime());
 		
 		
 		
