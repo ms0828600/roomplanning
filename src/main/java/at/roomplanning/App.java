@@ -178,6 +178,13 @@ public class App {
 		GuentherGroissboeck.getEmployeeroles().add(GuentherGroissboeck_Bass);
 		Bass.getEmployeeRoles().add(GuentherGroissboeck_Bass);
 		
+		EmployeeRole HerwigPecoraro_Tenor = new EmployeeRole();
+		HerwigPecoraro_Tenor.setEmployee(HerwigPecoraro);
+		HerwigPecoraro_Tenor.setRole(Tenor);
+		HerwigPecoraro_Tenor.setEvaluation(2);
+		HerwigPecoraro.getEmployeeroles().add(HerwigPecoraro_Tenor);
+		Bass.getEmployeeRoles().add(HerwigPecoraro_Tenor);
+		
 
 		// Aufführung erstellen
 		Performance performance = new Performance();
