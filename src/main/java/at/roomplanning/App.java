@@ -125,6 +125,11 @@ public class App {
 		Role Sopran = new Role();
 		Sopran.setName("Sopran");
 		
+		Role Alt = new Role();
+		Alt.setName("Alt");
+		
+		
+		
 		
 	
 		
