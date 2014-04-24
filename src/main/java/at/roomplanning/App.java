@@ -113,6 +113,8 @@ public class App {
 		
 		
 		// Rolle/Funktion erstellen
+		
+		//Role/Sänger
 		Role tenor = new Role();
 		tenor.setName("Tenor");
 		
@@ -161,6 +163,14 @@ public class App {
 		EditaGruberova.settEvaluation(1);
 		EditaGruberova.getEmployeerole().add(EditaGruberova_Sopran);
 		Sopran.getEmployeeRoles().add(EditaGruberova);
+		
+		EmployeeRole PlacidoDomingo = EmployeeRole();
+		PlacidoDomingo_Tenor.setEmployee(PlacidoDomingo);
+		PlacidoDomingo_Tenor.setRole(Tenor);
+		PlacidoDomingo.setEvalutation(1);
+		PlacidoDomingo.getEmployeerole().add (PlacidoDomingo_Tenor);
+		Tenor.getEmployeeRoles().add(PlacidoDomingo);
+		
 		
 
 		// Auff√ºhrung erstellen
