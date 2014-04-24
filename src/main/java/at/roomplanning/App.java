@@ -206,6 +206,12 @@ public class App {
 		StephanieHoutzeel.getEmployeeroles().add(StephanieHoutzeel_Sopran);
 		Sopran.getEmployeeRoles().add(StephanieHoutzeel_Sopran);
 		
+		EmployeeRole AdamPlachetka_Bass = new EmployeeRole();
+		AdamPlachetka_Bass.setEmployee(AdamPlachetka);
+		AdamPlachetka_Bass.setRole(Bass);
+		AdamPlachetka_Bass.setEvaluation(2);
+		AdamPlachetka.getEmployeeroles().add(AdamPlachetka_Bass);
+		Bass.getEmployeeRoles().add(AdamPlachetka_Bass);
 		
 		// Aufführung erstellen
 		Performance performance = new Performance();
