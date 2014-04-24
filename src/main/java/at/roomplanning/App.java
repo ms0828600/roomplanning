@@ -171,6 +171,12 @@ public class App {
 		PlacidoDomingo.getEmployeerole().add (PlacidoDomingo_Tenor);
 		Tenor.getEmployeeRoles().add(PlacidoDomingo);
 		
+		EmployeeRole GuentherGroissboeck_Bass = new EmployeeRole();
+		GuentherGroissboeck_Bass.setEmployee(GuentherGroissboeck);
+		GuentherGroissboeck_Bass.setRole(Bass);
+		GuentherGroissboeck_Bass.setEvaluation(2);
+		GuentherGroissboeck.getEmployeeroles().add(GuentherGroissboeck_Bass);
+		Bass.getEmployeeRoles().add(GuentherGroissboeck_Bass);
 		
 
 		// Aufführung erstellen
