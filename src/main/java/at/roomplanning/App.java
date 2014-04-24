@@ -89,6 +89,14 @@ public class App {
 		calendar.set(1972,10,5);
 		StephanieHoutzeel.setBirthDate(calendar.getTime());
 		
+		Employee AdamPlachetka = new Employee();
+		AdamPlachetka.setFirstName(Adam);
+		AdamPlachetka.setFamilyName(Plachetka);
+		calendar.set(1969, 10,5);
+		AdamPlachetka.setBirthDate(calendar.getTime());
+		
+		
+		
 		
 		
 		
