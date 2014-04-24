@@ -95,6 +95,13 @@ public class App {
 		calendar.set(1969, 10,5);
 		AdamPlachetka.setBirthDate(calendar.getTime());
 		
+		Employee ValentinaNafornita = new Employee();
+		ValentinaNafornita.setFirstName(Valentina);
+		ValentinaNafornita.setFamilyName(Nafornita);
+		calendar.set(1987,  10,5);
+		ValentinaNafornita.setBirthDate(calendar.getTime());
+		
+		
 		
 		
 		
