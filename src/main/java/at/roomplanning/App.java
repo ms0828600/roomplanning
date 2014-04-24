@@ -183,9 +183,16 @@ public class App {
 		HerwigPecoraro_Tenor.setRole(Tenor);
 		HerwigPecoraro_Tenor.setEvaluation(2);
 		HerwigPecoraro.getEmployeeroles().add(HerwigPecoraro_Tenor);
-		Bass.getEmployeeRoles().add(HerwigPecoraro_Tenor);
+		Tenor.getEmployeeRoles().add(HerwigPecoraro_Tenor);
 		
-
+		EmployeeRole AnitaHartig_Alt = new EmployeeRole();
+		AnitaHartig_Alt.setEmployee(AnitaHartig);
+		AnitaHartig_Alt.setRole(Alt);
+		AnitaHartig_Alt.setEvaluation(2);
+		AnitaHartig.getEmployeeroles().add(AnitaHartig_Alt);
+		Alt.getEmployeeRoles().add(AnitaHartig_Alt);
+		
+		
 		// Aufführung erstellen
 		Performance performance = new Performance();
 		performance.setName("Salome");
