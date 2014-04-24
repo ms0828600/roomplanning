@@ -294,6 +294,7 @@ public class App {
 		entityManager.persist(HerwigPecoraro);
 		entityManager.persist(AnitaHartig);
 		entityManager.persist(StephanieHoutzeel);
+		entityManager.persist(AdamPlachetka);
 		
 		
 		
