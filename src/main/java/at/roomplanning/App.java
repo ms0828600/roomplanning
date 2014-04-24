@@ -278,6 +278,7 @@ public class App {
 		entityManager.persist(PlacidoDomingo);
 		entityManager.persist(GuentherGroissboeck);
 		entityManager.persist(HerwigPecoraro);
+		entityManager.persist(AnitaHartig);
 		
 		
 		
