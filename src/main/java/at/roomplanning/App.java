@@ -192,6 +192,20 @@ public class App {
 		AnitaHartig.getEmployeeroles().add(AnitaHartig_Alt);
 		Alt.getEmployeeRoles().add(AnitaHartig_Alt);
 		
+		EmployeeRole AnitaHartig_Alt = new EmployeeRole();
+		AnitaHartig_Alt.setEmployee(AnitaHartig);
+		AnitaHartig_Alt.setRole(Alt);
+		AnitaHartig_Alt.setEvaluation(2);
+		AnitaHartig.getEmployeeroles().add(AnitaHartig_Alt);
+		Alt.getEmployeeRoles().add(AnitaHartig_Alt);
+		
+		EmployeeRole StephanieHoutzeel_Sopran = new EmployeeRole();
+		StephanieHoutzeel_Sopran.setEmployee(AnitaHartig);
+		StephanieHoutzeel_Sopran.setRole(Sopran);
+		StephanieHoutzeel_Sopran.setEvaluation(1);
+		StephanieHoutzeel.getEmployeeroles().add(StephanieHoutzeel_Sopran);
+		Sopran.getEmployeeRoles().add(StephanieHoutzeel_Sopran);
+		
 		
 		// Aufführung erstellen
 		Performance performance = new Performance();
