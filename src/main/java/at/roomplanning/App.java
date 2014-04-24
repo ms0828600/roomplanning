@@ -80,8 +80,14 @@ public class App {
 		Employee AnitaHartig = new Employee();
 		AnitaHartig.setfirstName(Anita);
 		AnitaHartig.setFamilyName(Hartig);
-		calendar.set(180,  10,5);
+		calendar.set(1970,  10,5);
 		AnitaHartig.setBirthDate(calendar.getTime());
+		
+		Employee StephanieHoutzeel = new Employee();
+		StephanieHoutzeel.setFirstName(Stephanie);
+		StephanieHoutzeel.setFamilyName(Houtzeel);
+		calendar.set(1972,10,5);
+		StephanieHoutzeel.setBirthDate(calendar.getTime());
 		
 		
 		
