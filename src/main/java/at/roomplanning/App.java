@@ -57,7 +57,13 @@ public class App {
 		EditaGruberova.setFirstName(Edita);
 		EditaGruberova.setFamilyName(Gruberova);
 		calendar.set(1961,  10, 5);
-		EditaGruberova.setBirthDate( calendar.getTime());
+		EditaGruberova.setBirthDate(calendar.getTime());
+		
+		Employee PlacidoDomingo = new Employee();
+		PlacidoDomingo.setFirstName(Placido);
+		PlacidoDomingo.setFamilyName(Domingo);
+		calendar.set(1960,  10, 5);
+		PlacidoDomingo.setBirthDate(calendar.getTime());;
 		
 		
 		
