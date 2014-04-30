@@ -1,5 +1,8 @@
 package at.roomplanning;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
@@ -8,7 +11,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
-import javax.persistence.metamodel.Type.PersistenceType;
 
 import at.roomplanning.entities.Employee;
 import at.roomplanning.entities.EmployeeRole;
@@ -48,56 +50,56 @@ public class App {
 		NeilShicoff.setBirthDate(calendar.getTime());
 		
 		Employee WolfgangBankl = new Employee();
-		WolfgangBankl.setFirstName(Wolfgang);
-		WolfgangBankl.setFamilyName(Bankl);
+		WolfgangBankl.setFirstName("Wolfgang");
+		WolfgangBankl.setFamilyName("Bankl");
 		calendar.set(1979, 10, 5);
 		WolfgangBankl.setBirthDate(calendar.getTime());
 		
 		Employee EditaGruberova = new Employee();
-		EditaGruberova.setFirstName(Edita);
-		EditaGruberova.setFamilyName(Gruberova);
+		EditaGruberova.setFirstName("Edita");
+		EditaGruberova.setFamilyName("Gruberova");
 		calendar.set(1961,  10, 5);
 		EditaGruberova.setBirthDate(calendar.getTime());
 		
 		Employee PlacidoDomingo = new Employee();
-		PlacidoDomingo.setFirstName(Placido);
-		PlacidoDomingo.setFamilyName(Domingo);
+		PlacidoDomingo.setFirstName("Placido");
+		PlacidoDomingo.setFamilyName("Domingo");
 		calendar.set(1960,  10, 5);
 		PlacidoDomingo.setBirthDate(calendar.getTime());
 		
 		Employee GuentherGroissboeck = new Employee();
-		GuentherGroissboeck.setFirstName(Guenther);
-		GuentherGroissboeck.setFamilyName(Groissboeck);
+		GuentherGroissboeck.setFirstName("Guenther");
+		GuentherGroissboeck.setFamilyName("Groissboeck");
 		calendar.set(1972, 10,5);
 		GuentherGroissboeck.setBirthDate(calendar.getTime());
 		
 		Employee HerwigPecoraro = new Employee();
-		HerwigPecoraro.setfirstName(Herwig);
-		HerwigPecoraro.setFamilyName(Pecoraro);
+		HerwigPecoraro.setFirstName("Herwig");
+		HerwigPecoraro.setFamilyName("Pecoraro");
 		calendar.set(1960,  10,5);
 		HerwigPecoraro.setBirthDate(calendar.getTime());
 		
 		Employee AnitaHartig = new Employee();
-		AnitaHartig.setfirstName(Anita);
-		AnitaHartig.setFamilyName(Hartig);
+		AnitaHartig.setFirstName("Anita");
+		AnitaHartig.setFamilyName("Hartig");
 		calendar.set(1970,  10,5);
 		AnitaHartig.setBirthDate(calendar.getTime());
 		
 		Employee StephanieHoutzeel = new Employee();
-		StephanieHoutzeel.setFirstName(Stephanie);
-		StephanieHoutzeel.setFamilyName(Houtzeel);
+		StephanieHoutzeel.setFirstName("Stephanie");
+		StephanieHoutzeel.setFamilyName("Houtzeel");
 		calendar.set(1972,10,5);
 		StephanieHoutzeel.setBirthDate(calendar.getTime());
 		
 		Employee AdamPlachetka = new Employee();
-		AdamPlachetka.setFirstName(Adam);
-		AdamPlachetka.setFamilyName(Plachetka);
+		AdamPlachetka.setFirstName("Adam");
+		AdamPlachetka.setFamilyName("Plachetka");
 		calendar.set(1969, 10,5);
 		AdamPlachetka.setBirthDate(calendar.getTime());
 		
 		Employee ValentinaNafornita = new Employee();
-		ValentinaNafornita.setFirstName(Valentina);
-		ValentinaNafornita.setFamilyName(Nafornita);
+		ValentinaNafornita.setFirstName("Valentina");
+		ValentinaNafornita.setFamilyName("Nafornita");
 		calendar.set(1987,  10,5);
 		ValentinaNafornita.setBirthDate(calendar.getTime());
 		
@@ -114,14 +116,14 @@ public class App {
 		
 		// Rolle/Funktion erstellen
 		
-		//Role/SŠnger
+		//Role/Saenger
 		Role tenor = new Role();
 		tenor.setName("Tenor");
 		
 		Role Bariton = new Role();
 		Bariton.setName("Bariton");
 		
-		Role Bass = new Role()
+		Role Bass = new Role();
 		Bass.setName("Bass");
 		
 		Role Sopran = new Role();
@@ -157,19 +159,19 @@ public class App {
 		NeilShicoff.getEmployeeroles().add(neilShicoff_Bariton);
 		Bariton.getEmployeeRoles().add(neilShicoff_Bariton);
 		
-		EmployeeRole EditaGruberova = new EmployeeRole();
+		EmployeeRole EditaGruberova_Sopran = new EmployeeRole();
 		EditaGruberova_Sopran.setEmployee(EditaGruberova);
 		EditaGruberova_Sopran.setRole(Sopran);
-		EditaGruberova.settEvaluation(1);
-		EditaGruberova.getEmployeerole().add(EditaGruberova_Sopran);
-		Sopran.getEmployeeRoles().add(EditaGruberova);
+		EditaGruberova_Sopran.setEvaluation(1);
+		EditaGruberova.getEmployeeroles().add(EditaGruberova_Sopran);
+		Sopran.getEmployeeRoles().add(EditaGruberova_Sopran);
 		
-		EmployeeRole PlacidoDomingo = EmployeeRole();
+		EmployeeRole PlacidoDomingo_Tenor = new EmployeeRole();
 		PlacidoDomingo_Tenor.setEmployee(PlacidoDomingo);
-		PlacidoDomingo_Tenor.setRole(Tenor);
-		PlacidoDomingo.setEvalutation(1);
-		PlacidoDomingo.getEmployeerole().add (PlacidoDomingo_Tenor);
-		Tenor.getEmployeeRoles().add(PlacidoDomingo);
+		PlacidoDomingo_Tenor.setRole(tenor);
+		PlacidoDomingo_Tenor.setEvaluation(1);
+		PlacidoDomingo.getEmployeeroles().add (PlacidoDomingo_Tenor);
+		tenor.getEmployeeRoles().add(PlacidoDomingo_Tenor);
 		
 		EmployeeRole GuentherGroissboeck_Bass = new EmployeeRole();
 		GuentherGroissboeck_Bass.setEmployee(GuentherGroissboeck);
@@ -180,10 +182,10 @@ public class App {
 		
 		EmployeeRole HerwigPecoraro_Tenor = new EmployeeRole();
 		HerwigPecoraro_Tenor.setEmployee(HerwigPecoraro);
-		HerwigPecoraro_Tenor.setRole(Tenor);
+		HerwigPecoraro_Tenor.setRole(tenor);
 		HerwigPecoraro_Tenor.setEvaluation(2);
 		HerwigPecoraro.getEmployeeroles().add(HerwigPecoraro_Tenor);
-		Tenor.getEmployeeRoles().add(HerwigPecoraro_Tenor);
+		tenor.getEmployeeRoles().add(HerwigPecoraro_Tenor);
 		
 		EmployeeRole AnitaHartig_Alt = new EmployeeRole();
 		AnitaHartig_Alt.setEmployee(AnitaHartig);
@@ -192,12 +194,13 @@ public class App {
 		AnitaHartig.getEmployeeroles().add(AnitaHartig_Alt);
 		Alt.getEmployeeRoles().add(AnitaHartig_Alt);
 		
+		/*
 		EmployeeRole AnitaHartig_Alt = new EmployeeRole();
 		AnitaHartig_Alt.setEmployee(AnitaHartig);
 		AnitaHartig_Alt.setRole(Alt);
 		AnitaHartig_Alt.setEvaluation(2);
 		AnitaHartig.getEmployeeroles().add(AnitaHartig_Alt);
-		Alt.getEmployeeRoles().add(AnitaHartig_Alt);
+		Alt.getEmployeeRoles().add(AnitaHartig_Alt);*/
 		
 		EmployeeRole StephanieHoutzeel_Sopran = new EmployeeRole();
 		StephanieHoutzeel_Sopran.setEmployee(AnitaHartig);
@@ -375,10 +378,22 @@ public class App {
 		
 		entityManager.persist( tenor );
 		entityManager.persist(Bariton);
+		entityManager.persist(Bass);
+		entityManager.persist(Sopran);
+		entityManager.persist(Alt);
 		
 		entityManager.persist( jonasKaufmann_tenor );
 		entityManager.persist(jonasKaufmann_Bariton);
 		entityManager.persist( neilShicoff_Bariton );
+		entityManager.persist(EditaGruberova_Sopran);
+		entityManager.persist(PlacidoDomingo_Tenor);
+		entityManager.persist(GuentherGroissboeck_Bass);
+		entityManager.persist(GuentherGroissboeck_Bass);
+		entityManager.persist(HerwigPecoraro_Tenor);
+		entityManager.persist(AnitaHartig_Alt);
+		entityManager.persist(StephanieHoutzeel_Sopran);
+		entityManager.persist(AdamPlachetka_Bass);
+		entityManager.persist(ValentinaNafornita_Sopran);
 		
 		entityManager.persist( correpetition );
 		entityManager.persist( ensemble );
@@ -428,6 +443,21 @@ public class App {
 		}
 		
 		entityManager.close();
+		
+		try{
+			System.out.println("Type something to finish application.");
+		    BufferedReader bufferRead = new BufferedReader(new InputStreamReader(System.in));
+		    String s = bufferRead.readLine();
+	 
+		    System.out.println("Closing...");
+		    entityManagerFactory.close();
+		}
+		catch(IOException e)
+		{
+			e.printStackTrace();
+		}
+	 
+		
 		
 		//entityManagerFactory.close();
 		
