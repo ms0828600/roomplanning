@@ -14,6 +14,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Transient;
 
 @Entity(name = "RehearsalType")
 public class RehearsalType {
@@ -31,8 +32,12 @@ public class RehearsalType {
 	@Column (nullable = false)
 	private Type type;
 
-	// Duration in minutes
+	// Duration in minutes (max-Time)
 	private int duration;
+	
+	// This value is set over the table Performance_RehearsalType
+	@Transient
+	private int count;
 	
 	// This type can have several parents which point to this node
 	@OneToMany (cascade = CascadeType.ALL)
