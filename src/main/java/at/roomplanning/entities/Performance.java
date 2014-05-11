@@ -18,6 +18,10 @@ import javax.persistence.TemporalType;
 @Entity(name = "Performance")
 public class Performance {
 
+	public static enum Type {
+		NEUINSZENIERUNG, WIEDERAUFNAHME, REPERTOIRE, STANDARD
+	}	
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
@@ -30,11 +34,13 @@ public class Performance {
 	@ManyToMany(cascade = CascadeType.ALL)
 	private Set<Employee> employees;
 
-	@ManyToOne(cascade = CascadeType.ALL)
-	private PerformanceType performanceType;
+	private Type type;
 
 	@OneToMany (cascade = CascadeType.ALL, mappedBy = "performance")
 	private Set<Rehearsal> rehearsals;
+	
+	@OneToMany (cascade = CascadeType.ALL, mappedBy = "rehearsalType")
+	private Set<Performance_RehearsalType> rehearsalTypes;	
 	
 	public Performance() {
 		this.employees = new HashSet<Employee>();
@@ -73,12 +79,12 @@ public class Performance {
 		this.employees = employees;
 	}
 
-	public PerformanceType getPerformanceType() {
-		return performanceType;
+	public Type getPerformanceType() {
+		return this.type;
 	}
 
-	public void setPerformanceType(PerformanceType performanceType) {
-		this.performanceType = performanceType;
+	public void setPerformanceType(Type type) {
+		this.type = type;
 	}
 
 	public Set<Rehearsal> getRehearsals() {

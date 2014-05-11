@@ -19,15 +19,15 @@ public class Role {
 	private Long id;
 
 	private String name;
-
+	
 	@OneToMany(mappedBy = "employee")
-	private Set<EmployeeRole> employeeRoles;
+	private Set<Employee_Role> employeeRoles;
 	
 	@ManyToMany (cascade = CascadeType.ALL)
 	private Set<RehearsalType> rehearsalTypes;
 
 	public Role() {
-		this.employeeRoles = new HashSet<EmployeeRole>(10);
+		this.employeeRoles = new HashSet<Employee_Role>(10);
 		this.rehearsalTypes = new HashSet<RehearsalType>();
 	}
 
@@ -47,11 +47,11 @@ public class Role {
 		this.name = name;
 	}
 
-	public Set<EmployeeRole> getEmployeeRoles() {
+	public Set<Employee_Role> getEmployeeRoles() {
 		return employeeRoles;
 	}
 
-	public void setEmployeeRoles(Set<EmployeeRole> employeeRoles) {
+	public void setEmployeeRoles(Set<Employee_Role> employeeRoles) {
 		this.employeeRoles = employeeRoles;
 	}
 

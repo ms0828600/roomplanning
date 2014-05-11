@@ -10,10 +10,10 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
-@Entity(name = "EmployeeRole")
+@Entity(name = "Employee_Role")
 @Table(uniqueConstraints = @UniqueConstraint(columnNames = { "id_role",
 		"id_employee" }))
-public class EmployeeRole {
+public class Employee_Role {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

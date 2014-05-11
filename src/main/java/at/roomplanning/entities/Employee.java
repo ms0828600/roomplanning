@@ -27,7 +27,7 @@ public class Employee {
 	//TODO: ENUM zugekauft/intern/...
 
 	@OneToMany(mappedBy = "role")
-	private Set<EmployeeRole> employeeroles;
+	private Set<Employee_Role> employeeroles;
 
 	@Temporal(TemporalType.DATE)
 	private Date birthDate;
@@ -36,7 +36,7 @@ public class Employee {
 	private Set<Performance> performances;
 
 	public Employee() {
-		this.employeeroles = new HashSet<EmployeeRole>(3);
+		this.employeeroles = new HashSet<Employee_Role>(3);
 		this.setPerformances(new HashSet<Performance>());
 	}
 
@@ -72,11 +72,11 @@ public class Employee {
 		this.birthDate = birthDate;
 	}
 
-	public Set<EmployeeRole> getEmployeeroles() {
+	public Set<Employee_Role> getEmployeeroles() {
 		return employeeroles;
 	}
 
-	public void setEmployeeroles(Set<EmployeeRole> employeeroles) {
+	public void setEmployeeroles(Set<Employee_Role> employeeroles) {
 		this.employeeroles = employeeroles;
 	}
 
