@@ -15,6 +15,7 @@ import javax.persistence.Query;
 import at.roomplanning.entities.Employee;
 import at.roomplanning.entities.Employee_Role;
 import at.roomplanning.entities.Performance;
+import at.roomplanning.entities.Performance_RehearsalType;
 import at.roomplanning.entities.Rehearsal;
 import at.roomplanning.entities.RehearsalType;
 import at.roomplanning.entities.Role;
@@ -36,6 +37,72 @@ public class App {
 		 * buildServiceRegistry(); SessionFactory sessionFactory =
 		 * configuration.buildSessionFactory(serviceRegistry);
 		 */
+		
+		
+		// ------------------------------------------------------------- Der
+		// Teil ist FERTIG
+
+		// Rehearsal types for Correpetition2premiere
+		RehearsalType correpetition = new RehearsalType();
+		correpetition.setType(RehearsalType.Type.KORREPETITIONSPROBE);
+		correpetition.setDuration(20);
+		correpetition.setPrevious(null);
+
+		RehearsalType ensemble = new RehearsalType();
+		ensemble.setType(RehearsalType.Type.ENSEMBLEPROBE);
+		ensemble.getPrevious().add(correpetition);
+		correpetition.setNext(ensemble);
+
+		RehearsalType scenes = new RehearsalType();
+		scenes.setType(RehearsalType.Type.SZENISCHEPROBE);
+		scenes.getPrevious().add(ensemble);
+		ensemble.setNext(scenes);
+
+		RehearsalType chor = new RehearsalType();
+		chor.setType(RehearsalType.Type.CHORALLEINPROBE);
+		chor.setPrevious(null);
+
+		RehearsalType orchester_alone = new RehearsalType();
+		orchester_alone.setType(RehearsalType.Type.ORCHESTERALLEINPROBE);
+		orchester_alone.setPrevious(null);
+
+		RehearsalType stage = new RehearsalType();
+		stage.setType(RehearsalType.Type.BUEHNENPROBE);
+		stage.getPrevious().add(scenes);
+		stage.getPrevious().add(chor);
+		stage.getPrevious().add(orchester_alone);
+		chor.setNext(stage);
+		orchester_alone.setNext(stage);
+		scenes.setNext(stage);
+
+		RehearsalType piano = new RehearsalType();
+		piano.setType(RehearsalType.Type.KLAVIERPROBE);
+		piano.getPrevious().add(stage);
+		stage.setNext(piano);
+
+		RehearsalType orchesterMain = new RehearsalType();
+		orchesterMain.setType(RehearsalType.Type.ORCHESTERHAUPTPROBE);
+		orchesterMain.getPrevious().add(piano);
+		piano.setNext(orchesterMain);
+
+		RehearsalType general = new RehearsalType();
+		general.setType(RehearsalType.Type.GENERALPROBE);
+		general.getPrevious().add(orchesterMain);
+		orchesterMain.setNext(general);
+
+		RehearsalType premiere = new RehearsalType();
+		premiere.setType(RehearsalType.Type.PREMIERE);
+		premiere.getPrevious().add(general);
+		premiere.setNext(null);
+		general.setNext(premiere);
+
+		// ------------------------------------------------------------- Der
+		// Teil ist FERTIG ENDE
+		
+		
+		
+		
+		
 
 		Calendar calendar = GregorianCalendar.getInstance();
 
@@ -217,71 +284,20 @@ public class App {
 		performance_salome.setDate(calendar.getTime());
 		performance_salome
 				.setPerformanceType(at.roomplanning.entities.Performance.Type.NEUINSZENIERUNG);
+		
+		Performance_RehearsalType salome_correpetition = new Performance_RehearsalType();
+		salome_correpetition.setCount(10);
+		salome_correpetition.setPerformance(performance_salome);
+		salome_correpetition.setRehearsalType(correpetition);
+		
+		
 
 		// Aufführung dem Mitarbeiter zuweisen, und
 		// umgekehrt
 		jonasKaufmann.getPerformances().add(performance_salome);
 		performance_salome.getEmployees().add(jonasKaufmann);
 
-		// ------------------------------------------------------------- Der
-		// Teil ist FERTIG
 
-		// Rehearsal types for Correpetition2premiere
-		RehearsalType correpetition = new RehearsalType();
-		correpetition.setType(RehearsalType.Type.KORREPETITIONSPROBE);
-		correpetition.setDuration(20);
-		correpetition.setPrevious(null);
-
-		RehearsalType ensemble = new RehearsalType();
-		ensemble.setType(RehearsalType.Type.ENSEMBLEPROBE);
-		ensemble.getPrevious().add(correpetition);
-		correpetition.setNext(ensemble);
-
-		RehearsalType scenes = new RehearsalType();
-		scenes.setType(RehearsalType.Type.SZENISCHEPROBE);
-		scenes.getPrevious().add(ensemble);
-		ensemble.setNext(scenes);
-
-		RehearsalType chor = new RehearsalType();
-		chor.setType(RehearsalType.Type.CHORALLEINPROBE);
-		chor.setPrevious(null);
-
-		RehearsalType orchester_alone = new RehearsalType();
-		orchester_alone.setType(RehearsalType.Type.ORCHESTERALLEINPROBE);
-		orchester_alone.setPrevious(null);
-
-		RehearsalType stage = new RehearsalType();
-		stage.setType(RehearsalType.Type.BUEHNENPROBE);
-		stage.getPrevious().add(scenes);
-		stage.getPrevious().add(chor);
-		stage.getPrevious().add(orchester_alone);
-		chor.setNext(stage);
-		orchester_alone.setNext(stage);
-		scenes.setNext(stage);
-
-		RehearsalType piano = new RehearsalType();
-		piano.setType(RehearsalType.Type.KLAVIERPROBE);
-		piano.getPrevious().add(stage);
-		stage.setNext(piano);
-
-		RehearsalType orchesterMain = new RehearsalType();
-		orchesterMain.setType(RehearsalType.Type.ORCHESTERHAUPTPROBE);
-		orchesterMain.getPrevious().add(piano);
-		piano.setNext(orchesterMain);
-
-		RehearsalType general = new RehearsalType();
-		general.setType(RehearsalType.Type.GENERALPROBE);
-		general.getPrevious().add(orchesterMain);
-		orchesterMain.setNext(general);
-
-		RehearsalType premiere = new RehearsalType();
-		premiere.setType(RehearsalType.Type.PREMIERE);
-		premiere.getPrevious().add(general);
-		premiere.setNext(null);
-		general.setNext(premiere);
-
-		// ------------------------------------------------------------- Der
-		// Teil ist FERTIG ENDE
 
 		// Räume erstellen
 		Room room1 = new Room();
@@ -376,12 +392,21 @@ public class App {
 		entityManager.persist(piano);
 		entityManager.persist(general);
 		entityManager.persist(premiere);
-		entityManager.persist(performance_salome);
 		entityManager.persist(room1);
 		entityManager.persist(room2);
 		entityManager.persist(rehearsal1);
 		entityManager.persist(rehearsal2);
+		
+		
+		entityManager.persist(salome_correpetition);
+		entityManager.persist(performance_salome);
+		
 		entityManager.getTransaction().commit();
+		
+		
+		/**
+		 * Select all Employees with their Roles/Functions
+		 */
 
 		Query query = entityManager.createQuery("SELECT e FROM Employee e");
 		@SuppressWarnings("unchecked")
@@ -394,6 +419,14 @@ public class App {
 				System.out.println("Role: " + er.getRole().getName());
 			}
 		}
+		
+		
+		/**
+		 * TODO: Select process for performance "salome"
+		 * TODO: Kill table performancetype??? if fixed for program we 
+		 * will not need this table
+		 */
+		
 
 		query = entityManager
 				.createQuery("Select t FROM RehearsalType t WHERE t.type = :processStart");
