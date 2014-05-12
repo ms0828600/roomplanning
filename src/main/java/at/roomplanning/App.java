@@ -277,6 +277,20 @@ public class App {
 		ValentinaNafornita.getEmployeeroles().add(ValentinaNafornita_Sopran);
 		Sopran.getEmployeeRoles().add(ValentinaNafornita_Sopran);
 
+		
+		// Musiker erstellen
+		
+		Employee_Role JosefReif_Horn1 = new Employee_Role();
+		JosefReif_Horn1.setEmployee(JosefReif);
+		JosefReif_Horn1.setRole(Horn1);
+		JosefReif_Horn1.setEvaluation(1);
+		JosefReif_Horn1.getEmployeeroles().add(JosefReif_Horn1);
+		Horn1.getEmployeeRoles().add(JosefReif_Horn1);
+		
+		
+		
+		
+		
 		// Aufführung erstellen
 		Performance performance_salome = new Performance();
 		performance_salome.setName("Salome");
