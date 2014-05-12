@@ -324,7 +324,7 @@ public class App {
 		Sopran.getEmployeeRoles().add(ValentinaNafornita_Sopran);
 
 		
-		// Musiker erstellen
+		// Musiker Simmen zuweisen
 		
 		Employee_Role JosefReif_Horn1 = new Employee_Role();
 		JosefReif_Horn1.setEmployee(JosefReif);
@@ -341,18 +341,25 @@ public class App {
 		Horn1.getEmployeeRoles().add(RonaldJanezic_Horn1);	
 		
 		Employee_Role ManuelHuber_Horn1 = new Employee_Role();
-		ManuelHuber_Horn1 .setEmployee(RonaldJanezic);
+		ManuelHuber_Horn1 .setEmployee(JanJankovic);
 		ManuelHuber_Horn1 .setRole(Horn1);
 		ManuelHuber_Horn1 .setEvaluation(1);
 		ManuelHuber_Horn1 .getEmployeeroles().add(ManuelHuber_Horn1 );
 		Horn1.getEmployeeRoles().add(ManuelHuber_Horn1 );	
 		
 		Employee_Role WolfgangLintner_Horn2 = new Employee_Role();
-		WolfgangLintner_Horn2 .setEmployee(RonaldJanezic);
+		WolfgangLintner_Horn2 .setEmployee(JanJankovic);
 		WolfgangLintner_Horn2 .setRole(Horn1);
 		WolfgangLintner_Horn2 .setEvaluation(1);
 		WolfgangLintner_Horn2 .getEmployeeroles().add(WolfgangLintner_Horn2);
 		Horn2.getEmployeeRoles().add(WolfgangLintner_Horn2 );
+		
+		Employee_Role JanJankovic_Horn2 = new Employee_Role();
+		JanJankovic_Horn2 .setEmployee(JanJankovic);
+		JanJankovic_Horn2 .setRole(Horn1);
+		JanJankovic_Horn2 .setEvaluation(1);
+		JanJankovic_Horn2 .getEmployeeroles().add(JanJankovic_Horn2);
+		Horn2.getEmployeeRoles().add(JanJankovic_Horn2 );
 		
 		
 		
