@@ -308,7 +308,12 @@ public class App {
 		JosefReif_Horn1.getEmployeeroles().add(JosefReif_Horn1);
 		Horn1.getEmployeeRoles().add(JosefReif_Horn1);
 		
-		
+		Employee_Role RonaldJanezic_Horn1 = new Employee_Role();
+		RonaldJanezic_Horn1.setEmployee(RonaldJanezic);
+		RonaldJanezic_Horn1.setRole(Horn1);
+		RonaldJanezic_Horn1.setEvaluation(1);
+		RonaldJanezic_Horn1.getEmployeeroles().add(RonaldJanezic_Horn1);
+		Horn1.getEmployeeRoles().add(RonaldJanezic_Horn1);		
 		
 		
 		
