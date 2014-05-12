@@ -191,6 +191,11 @@ public class App {
 		Role Alt = new Role();
 		Alt.setName("Alt");
 
+		// Rolle/Funktion Orchestermusiker
+		
+		Role Horn1 = new Role();
+		Alt.setName("Horn1");
+		
 		// Zuweisung Rolle <-> Mitarbeiter
 		Employee_Role jonasKaufmann_tenor = new Employee_Role();
 		jonasKaufmann_tenor.setEmployee(jonasKaufmann);
