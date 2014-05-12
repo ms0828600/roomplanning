@@ -200,6 +200,12 @@ public class App {
 		calendar.set(1987, 10, 5);
 		WolfgangLintner.setBirthDate(calendar.getTime());
 		
+		Employee JanJankovic = new Employee();
+		JanJankovic.setFirstName("Jan");
+		JanJankovic.setFamilyName("Jankovic");
+		calendar.set(1987, 10, 5);
+		JanJankovic.setBirthDate(calendar.getTime());
+		
 		
 		
 		
