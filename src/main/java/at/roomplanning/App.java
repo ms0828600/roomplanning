@@ -181,12 +181,20 @@ public class App {
 		JosefReif.setFamilyName("Reif");
 		calendar.set(1987, 10, 5);
 		JosefReif.setBirthDate(calendar.getTime());
+				
+		Employee ManuelHuber = new Employee();
+		ManuelHuber.setFirstName("Manuel");
+		ManuelHuber.setFamilyName("Huber");
+		calendar.set(1987, 10, 5);
+		ManuelHuber.setBirthDate(calendar.getTime());
 		
 		Employee RonaldJanezic = new Employee();
 		RonaldJanezic.setFirstName("Ronald");
 		JosefReif.setFamilyName("Janezic");
 		calendar.set(1987, 10, 5);
 		RonaldJanezic.setBirthDate(calendar.getTime());
+		
+		
 		
 		
 		// Rolle/Funktion erstellen
