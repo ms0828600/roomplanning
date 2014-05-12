@@ -451,6 +451,7 @@ public class App {
 		entityManager.persist(RonaldJanezic);
 		entityManager.persist(ManuelHuber);
 		entityManager.persist(WolfgangLintner);
+		entityManager.persist(JanJankovic);
 
 
 		entityManager.persist(tenor);
@@ -477,6 +478,7 @@ public class App {
 		entityManager.persist(RonaldJanezic_Horn1);
 		entityManager.persist(ManuelHuber_Horn1 );
 		entityManager.persist(WolfgangLintner_Horn2);
+		entityManager.persist(JanJankovic_Horn2);
 		
 
 
