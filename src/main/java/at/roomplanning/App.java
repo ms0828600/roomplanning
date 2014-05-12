@@ -341,6 +341,13 @@ public class App {
 		ManuelHuber_Horn1 .getEmployeeroles().add(ManuelHuber_Horn1 );
 		Horn1.getEmployeeRoles().add(ManuelHuber_Horn1 );	
 		
+		Employee_Role WolfgangLintner_Horn2 = new Employee_Role();
+		WolfgangLintner_Horn2 .setEmployee(RonaldJanezic);
+		WolfgangLintner_Horn2 .setRole(Horn1);
+		WolfgangLintner_Horn2 .setEvaluation(1);
+		WolfgangLintner_Horn2 .getEmployeeroles().add(WolfgangLintner_Horn2);
+		Horn2.getEmployeeRoles().add(WolfgangLintner_Horn2 );
+		
 		
 		
 		// Aufführung erstellen
