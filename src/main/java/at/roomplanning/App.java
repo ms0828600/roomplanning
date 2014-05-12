@@ -321,7 +321,14 @@ public class App {
 		RonaldJanezic_Horn1.setRole(Horn1);
 		RonaldJanezic_Horn1.setEvaluation(1);
 		RonaldJanezic_Horn1.getEmployeeroles().add(RonaldJanezic_Horn1);
-		Horn1.getEmployeeRoles().add(RonaldJanezic_Horn1);		
+		Horn1.getEmployeeRoles().add(RonaldJanezic_Horn1);	
+		
+		Employee_Role ManuelHuber_Horn1 = new Employee_Role();
+		ManuelHuber_Horn1 .setEmployee(RonaldJanezic);
+		ManuelHuber_Horn1 .setRole(Horn1);
+		ManuelHuber_Horn1 .setEvaluation(1);
+		ManuelHuber_Horn1 .getEmployeeroles().add(ManuelHuber_Horn1 );
+		Horn1.getEmployeeRoles().add(ManuelHuber_Horn1 );	
 		
 		
 		
@@ -411,6 +418,7 @@ public class App {
 		entityManager.persist(ValentinaNafornita);
 		entityManager.persist(JosefReif);
 		entityManager.persist(RonaldJanezic);
+		entityManager.persist(ManuelHuber);
 
 
 		entityManager.persist(tenor);
@@ -434,6 +442,7 @@ public class App {
 		entityManager.persist(ValentinaNafornita_Sopran);
 		entityManager.persist(JosefReif_Horn1);
 		entityManager.persist(RonaldJanezic_Horn1);
+		entityManager.persist(ManuelHuber_Horn1 );
 		
 
 
