@@ -228,6 +228,9 @@ public class App {
 		Role Horn1 = new Role();
 		Alt.setName("Horn1");
 		
+		Role Horn2 = new Role();
+		Alt.setName("Horn2");
+		
 		// Zuweisung Rolle <-> Mitarbeiter
 		Employee_Role jonasKaufmann_tenor = new Employee_Role();
 		jonasKaufmann_tenor.setEmployee(jonasKaufmann);
