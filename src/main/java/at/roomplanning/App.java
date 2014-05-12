@@ -402,6 +402,8 @@ public class App {
 		entityManager.persist(AdamPlachetka);
 		entityManager.persist(ValentinaNafornita);
 		entityManager.persist(JosefReif);
+		entityManager.persist(RonaldJanezic);
+
 
 		entityManager.persist(tenor);
 		entityManager.persist(Bariton);
@@ -423,6 +425,8 @@ public class App {
 		entityManager.persist(AdamPlachetka_Bass);
 		entityManager.persist(ValentinaNafornita_Sopran);
 		entityManager.persist(JosefReif_Horn1);
+		entityManager.persist(RonaldJanezic_Horn1);
+		
 
 
 		
