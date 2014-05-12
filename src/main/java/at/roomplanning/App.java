@@ -194,6 +194,14 @@ public class App {
 		calendar.set(1987, 10, 5);
 		RonaldJanezic.setBirthDate(calendar.getTime());
 		
+		Employee WolfgangLintner = new Employee();
+		WolfgangLintner.setFirstName("Wolfgang");
+		WolfgangLintner.setFamilyName("Lintner");
+		calendar.set(1987, 10, 5);
+		WolfgangLintner.setBirthDate(calendar.getTime());
+		
+		
+		
 		
 		
 		
