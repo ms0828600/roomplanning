@@ -173,6 +173,16 @@ public class App {
 		calendar.set(1987, 10, 5);
 		ValentinaNafornita.setBirthDate(calendar.getTime());
 
+		
+		//Mitarbeiter Orchestermusiker
+		
+		Employee JosefReif = new Employee();
+		JosefReif.setFirstName("Josef");
+		JosefReif.setFamilyName("Reif");
+		calendar.set(1987, 10, 5);
+		JosefReif.setBirthDate(calendar.getTime());
+		
+		
 		// Rolle/Funktion erstellen
 
 		// Role/Saenger
