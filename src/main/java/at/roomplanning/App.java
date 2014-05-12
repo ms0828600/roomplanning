@@ -375,12 +375,14 @@ public class App {
 		entityManager.persist(StephanieHoutzeel);
 		entityManager.persist(AdamPlachetka);
 		entityManager.persist(ValentinaNafornita);
+		entityManager.persist(JosefReif);
 
 		entityManager.persist(tenor);
 		entityManager.persist(Bariton);
 		entityManager.persist(Bass);
 		entityManager.persist(Sopran);
 		entityManager.persist(Alt);
+		entityManager.persist(Horn1);
 
 		entityManager.persist(jonasKaufmann_tenor);
 		entityManager.persist(jonasKaufmann_Bariton);
@@ -394,6 +396,7 @@ public class App {
 		entityManager.persist(StephanieHoutzeel_Sopran);
 		entityManager.persist(AdamPlachetka_Bass);
 		entityManager.persist(ValentinaNafornita_Sopran);
+		entityManager.persist(JosefReif_Horn1);
 
 
 		
