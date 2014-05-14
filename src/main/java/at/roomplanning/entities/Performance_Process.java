@@ -7,8 +7,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
-@Entity (name = "Performance_RehearsalType")
-public class Performance_RehearsalType {
+@Entity (name = "Performance_Process")
+public class Performance_Process {
 	
 	public Long getId() {
 		return id;
@@ -26,12 +26,12 @@ public class Performance_RehearsalType {
 		this.performance = performance;
 	}
 
-	public RehearsalType getRehearsalType() {
-		return rehearsalType;
+	public Process getProcessEntry() {
+		return processEntry;
 	}
 
-	public void setRehearsalType(RehearsalType rehearsalType) {
-		this.rehearsalType = rehearsalType;
+	public void setProcessEntry(Process processEntry) {
+		this.processEntry = processEntry;
 	}
 
 	public int getCount() {
@@ -50,7 +50,7 @@ public class Performance_RehearsalType {
 	private Performance performance;
 	
 	@ManyToOne(cascade = CascadeType.ALL)
-	private RehearsalType rehearsalType;
+	private Process processEntry;
 	
 	private int count = 0;
 

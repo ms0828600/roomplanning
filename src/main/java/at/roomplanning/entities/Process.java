@@ -14,23 +14,18 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Transient;
 
-@Entity(name = "RehearsalType")
-public class RehearsalType {
+@Entity(name = "Process")
+public class Process {
 	
-	public static enum Type {
-		KORREPETITIONSPROBE, SZENISCHEPROBE, ENSEMBLEPROBE, CHORALLEINPROBE, ORCHESTERALLEINPROBE,
-		BUEHNENPROBE, KLAVIERPROBE, ORCHESTERHAUPTPROBE, GENERALPROBE, PREMIERE
-	}	
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
-	@Enumerated(EnumType.ORDINAL)
 	@Column (nullable = false)
-	private Type type;
+	private String name;
 
 	// Duration in minutes (max-Time)
 	private int duration;
@@ -41,13 +36,13 @@ public class RehearsalType {
 	
 	// This type can have several parents which point to this node
 	@OneToMany (cascade = CascadeType.ALL)
-	private Set<RehearsalType> previous;
+	private Set<Process> previous;
 	
 	@ManyToOne (optional = true)
-	private RehearsalType next;
+	private Process next;
 	
 	@OneToMany (cascade = CascadeType.ALL, mappedBy = "performance")
-	private Set<Performance_RehearsalType> performances;		
+	private Set<Performance_Process> performances;		
 
 	@ManyToMany (cascade = CascadeType.ALL)
 	private Set<Role> roles;
@@ -58,8 +53,8 @@ public class RehearsalType {
 	@OneToMany (cascade = CascadeType.ALL)
 	private Set<Rehearsal> rehearsals;
 
-	public RehearsalType() {
-		this.previous = new HashSet<RehearsalType>();
+	public Process() {
+		this.previous = new HashSet<Process>();
 		this.roles = new HashSet<Role>();
 		this.rehearsals = new HashSet<Rehearsal>();
 		this.rooms = new HashSet<Room>();
@@ -73,12 +68,12 @@ public class RehearsalType {
 		this.id = id;
 	}
 
-	public Type getType() {
-		return type;
+	public String getName() {
+		return name;
 	}
 
-	public void setType(Type type) {
-		this.type = type;
+	public void setType(String name) {
+		this.name = name;
 	}
 
 	public int getDuration() {
@@ -89,19 +84,19 @@ public class RehearsalType {
 		this.duration = duration;
 	}
 
-	public Set<RehearsalType> getPrevious() {
+	public Set<Process> getPrevious() {
 		return previous;
 	}
 
-	public void setPrevious(Set<RehearsalType> previous) {
+	public void setPrevious(Set<Process> previous) {
 		this.previous = previous;
 	}
 
-	public RehearsalType getNext() {
+	public Process getNext() {
 		return next;
 	}
 
-	public void setNext(RehearsalType next) {
+	public void setNext(Process next) {
 		this.next = next;
 	}
 

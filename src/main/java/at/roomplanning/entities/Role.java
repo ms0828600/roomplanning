@@ -24,11 +24,11 @@ public class Role {
 	private Set<Employee_Role> employeeRoles;
 	
 	@ManyToMany (cascade = CascadeType.ALL)
-	private Set<RehearsalType> rehearsalTypes;
+	private Set<Process> rehearsalTypes;
 
 	public Role() {
 		this.employeeRoles = new HashSet<Employee_Role>(10);
-		this.rehearsalTypes = new HashSet<RehearsalType>();
+		this.rehearsalTypes = new HashSet<Process>();
 	}
 
 	public Long getId() {
@@ -55,11 +55,11 @@ public class Role {
 		this.employeeRoles = employeeRoles;
 	}
 
-	public Set<RehearsalType> getRehearsalTypes() {
+	public Set<Process> getRehearsalTypes() {
 		return rehearsalTypes;
 	}
 
-	public void setRehearsalTypes(Set<RehearsalType> rehearsalTypes) {
+	public void setRehearsalTypes(Set<Process> rehearsalTypes) {
 		this.rehearsalTypes = rehearsalTypes;
 	}
 

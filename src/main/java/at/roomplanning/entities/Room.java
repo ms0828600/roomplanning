@@ -23,14 +23,14 @@ public class Room {
 	private String location;
 	
 	@ManyToMany (cascade = CascadeType.ALL)
-	private Set<RehearsalType> rehearsalTypes;
+	private Set<Process> rehearsalTypes;
 
 	@OneToMany (cascade = CascadeType.ALL)
 	private Set<Rehearsal> rehearsals;	
 	
 	public Room() {
 		this.rehearsals = new HashSet<Rehearsal>();
-		this.rehearsalTypes = new HashSet<RehearsalType>();
+		this.rehearsalTypes = new HashSet<Process>();
 	}
 	
 	public Long getId() {
@@ -57,11 +57,11 @@ public class Room {
 		this.location = location;
 	}
 
-	public Set<RehearsalType> getRehearsalTypes() {
+	public Set<Process> getRehearsalTypes() {
 		return rehearsalTypes;
 	}
 
-	public void setRehearsalTypes(Set<RehearsalType> rehearsalTypes) {
+	public void setRehearsalTypes(Set<Process> rehearsalTypes) {
 		this.rehearsalTypes = rehearsalTypes;
 	}
 

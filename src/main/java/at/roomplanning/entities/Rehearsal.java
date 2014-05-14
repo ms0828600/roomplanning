@@ -31,7 +31,7 @@ public class Rehearsal {
 	private int duration;
 	
 	@OneToOne
-	private RehearsalType rehearsalType;
+	private Process rehearsalType;
 
 	public Long getId() {
 		return id;
@@ -65,11 +65,11 @@ public class Rehearsal {
 		this.room = room;
 	}
 
-	public RehearsalType getRehearsalType() {
+	public Process getRehearsalType() {
 		return rehearsalType;
 	}
 
-	public void setRehearsalType(RehearsalType rehearsalType) {
+	public void setRehearsalType(Process rehearsalType) {
 		this.rehearsalType = rehearsalType;
 	}
 

@@ -10,18 +10,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity(name = "Performance")
 public class Performance {
 
-	public static enum Type {
-		NEUINSZENIERUNG, WIEDERAUFNAHME, REPERTOIRE, STANDARD
-	}	
-	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
@@ -34,17 +30,31 @@ public class Performance {
 	@ManyToMany(cascade = CascadeType.ALL)
 	private Set<Employee> employees;
 
-	private Type type;
+	@OneToOne
+	private PerformanceType performanceType;
+	
+	@OneToMany (cascade = CascadeType.ALL, mappedBy = "processEntry")
+	private Set<Performance_Process> processEntries;		
+	
+
+	public Set<Performance_Process> getProcessEntries() {
+		return processEntries;
+	}
+
+	public void setProcessEntries(Set<Performance_Process> processEntries) {
+		this.processEntries = processEntries;
+	}
 
 	@OneToMany (cascade = CascadeType.ALL, mappedBy = "performance")
 	private Set<Rehearsal> rehearsals;
 	
-	@OneToMany (cascade = CascadeType.ALL, mappedBy = "rehearsalType")
-	private Set<Performance_RehearsalType> rehearsalTypes;	
+	@OneToMany (cascade = CascadeType.ALL, mappedBy = "processEntry")
+	private Set<Performance_Process> rehearsalTypes;	
 	
 	public Performance() {
 		this.employees = new HashSet<Employee>();
 		this.setRehearsals(new HashSet<Rehearsal>());
+		this.processEntries = new HashSet<Performance_Process>();
 	}
 
 	public Long getId() {
@@ -79,12 +89,12 @@ public class Performance {
 		this.employees = employees;
 	}
 
-	public Type getPerformanceType() {
-		return this.type;
+	public PerformanceType getPerformanceType() {
+		return this.performanceType;
 	}
 
-	public void setPerformanceType(Type type) {
-		this.type = type;
+	public void setPerformanceType(PerformanceType type) {
+		this.performanceType = type;
 	}
 
 	public Set<Rehearsal> getRehearsals() {
