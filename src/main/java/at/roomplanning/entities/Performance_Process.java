@@ -7,41 +7,18 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import lombok.Data;
+
+/**
+ * This class is the relation between a performance and the process-chain.
+ * It stores how many iterations a performance needs of each type of the
+ * process chain.
+ *
+ */
+@Data
 @Entity (name = "Performance_Process")
 public class Performance_Process {
 	
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public Performance getPerformance() {
-		return performance;
-	}
-
-	public void setPerformance(Performance performance) {
-		this.performance = performance;
-	}
-
-	public Process getProcessEntry() {
-		return processEntry;
-	}
-
-	public void setProcessEntry(Process processEntry) {
-		this.processEntry = processEntry;
-	}
-
-	public int getCount() {
-		return count;
-	}
-
-	public void setCount(int count) {
-		this.count = count;
-	}
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;

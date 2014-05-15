@@ -7,32 +7,31 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 
 import lombok.Data;
 
 /**
- * This class stores the type of performances like 
- * repertoire, standard etc.
- * The @processStart attribute stores, where the process-chain
- * for this performance-type starts
+ * This class stores the name of the opera or ballett
+ * @author martin
+ *
  */
 @Data
-@Entity(name ="PerformanceType")
-public class PerformanceType {
-	
+@Entity (name = "Play")
+public class Play {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	
-	@Column(nullable = false)
-	private String name;
 
-	@OneToOne
-	private Process processStart;
+	@Column (nullable = false)
+	private String name;	
+
+	@ManyToOne
+	private PlayType playType;
 	
-	@OneToMany (mappedBy = "performanceType")
+	@OneToMany (mappedBy = "play")
 	private Set<Performance> performances;
-
+	
 }

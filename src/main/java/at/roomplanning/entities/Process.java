@@ -17,6 +17,20 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Transient;
 
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+
+/**
+ * This class represents the process-chain.
+ * Each entry of the process chain has a name, a 
+ * predecessor and a successor.
+ * If the @next value is set to null, we have reached
+ * the final state of the process chain.
+ * If @previous is set to null, we have the start of the
+ * process chain
+ */
+@Data
+@EqualsAndHashCode(exclude={"previous", "next"})
 @Entity(name = "Process")
 public class Process {
 	
@@ -29,10 +43,6 @@ public class Process {
 
 	// Duration in minutes (max-Time)
 	private int duration;
-	
-	// This value is set over the table Performance_RehearsalType
-	@Transient
-	private int count;
 	
 	// This type can have several parents which point to this node
 	@OneToMany (cascade = CascadeType.ALL)
@@ -58,70 +68,6 @@ public class Process {
 		this.roles = new HashSet<Role>();
 		this.rehearsals = new HashSet<Rehearsal>();
 		this.rooms = new HashSet<Room>();
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setType(String name) {
-		this.name = name;
-	}
-
-	public int getDuration() {
-		return duration;
-	}
-
-	public void setDuration(int duration) {
-		this.duration = duration;
-	}
-
-	public Set<Process> getPrevious() {
-		return previous;
-	}
-
-	public void setPrevious(Set<Process> previous) {
-		this.previous = previous;
-	}
-
-	public Process getNext() {
-		return next;
-	}
-
-	public void setNext(Process next) {
-		this.next = next;
-	}
-
-	public Set<Role> getRoles() {
-		return roles;
-	}
-
-	public void setRoles(Set<Role> roles) {
-		this.roles = roles;
-	}
-
-	public Set<Rehearsal> getRehearsals() {
-		return rehearsals;
-	}
-
-	public void setRehearsals(Set<Rehearsal> rehearsals) {
-		this.rehearsals = rehearsals;
-	}
-
-	public Set<Room> getRooms() {
-		return rooms;
-	}
-
-	public void setRooms(Set<Room> rooms) {
-		this.rooms = rooms;
 	}
 
 

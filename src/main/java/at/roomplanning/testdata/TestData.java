@@ -194,30 +194,30 @@ public class TestData {
 		
 		// Rehearsal types for Correpetition2premiere
 		Process correpetition = new Process();
-		correpetition.setType("KORREPETITIONSPROBE");
+		correpetition.setName("KORREPETITIONSPROBE");
 		correpetition.setDuration(20);
 		correpetition.setPrevious(null);
 
 		Process ensemble = new Process();
-		ensemble.setType("ENSEMBLEPROBE");
+		ensemble.setName("ENSEMBLEPROBE");
 		ensemble.getPrevious().add(correpetition);
 		correpetition.setNext(ensemble);
 
 		Process scenes = new Process();
-		scenes.setType("SZENISCHEPROBE");
+		scenes.setName("SZENISCHEPROBE");
 		scenes.getPrevious().add(ensemble);
 		ensemble.setNext(scenes);
 
 		Process chor = new Process();
-		chor.setType("CHORALLEINPROBE");
+		chor.setName("CHORALLEINPROBE");
 		chor.setPrevious(null);
 
 		Process orchester_alone = new Process();
-		orchester_alone.setType("ORCHESTERALLEINPROBE");
+		orchester_alone.setName("ORCHESTERALLEINPROBE");
 		orchester_alone.setPrevious(null);
 
 		Process stage = new Process();
-		stage.setType("BUEHNENPROBE");
+		stage.setName("BUEHNENPROBE");
 		stage.getPrevious().add(scenes);
 		stage.getPrevious().add(chor);
 		stage.getPrevious().add(orchester_alone);
@@ -226,22 +226,22 @@ public class TestData {
 		scenes.setNext(stage);
 
 		Process piano = new Process();
-		piano.setType("KLAVIERPROBE");
+		piano.setName("KLAVIERPROBE");
 		piano.getPrevious().add(stage);
 		stage.setNext(piano);
 
 		Process orchesterMain = new Process();
-		orchesterMain.setType("ORCHESTERHAUPTPROBE");
+		orchesterMain.setName("ORCHESTERHAUPTPROBE");
 		orchesterMain.getPrevious().add(piano);
 		piano.setNext(orchesterMain);
 
 		Process general = new Process();
-		general.setType("GENERALPROBE");
+		general.setName("GENERALPROBE");
 		general.getPrevious().add(orchesterMain);
 		orchesterMain.setNext(general);
 
 		Process premiere = new Process();
-		premiere.setType("PREMIERE");
+		premiere.setName("PREMIERE");
 		premiere.getPrevious().add(general);
 		premiere.setNext(null);
 		general.setNext(premiere);

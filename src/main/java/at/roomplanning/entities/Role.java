@@ -11,6 +11,14 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
+import lombok.Data;
+
+/**
+ * This class stores the roles of a system like singer, instruments, etc.
+ * and the relation to the employees who can play this role.
+ *
+ */
+@Data
 @Entity(name = "Role")
 public class Role {
 
@@ -29,38 +37,6 @@ public class Role {
 	public Role() {
 		this.employeeRoles = new HashSet<Employee_Role>(10);
 		this.rehearsalTypes = new HashSet<Process>();
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public Set<Employee_Role> getEmployeeRoles() {
-		return employeeRoles;
-	}
-
-	public void setEmployeeRoles(Set<Employee_Role> employeeRoles) {
-		this.employeeRoles = employeeRoles;
-	}
-
-	public Set<Process> getRehearsalTypes() {
-		return rehearsalTypes;
-	}
-
-	public void setRehearsalTypes(Set<Process> rehearsalTypes) {
-		this.rehearsalTypes = rehearsalTypes;
 	}
 
 }

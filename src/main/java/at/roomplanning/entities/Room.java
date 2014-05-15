@@ -11,6 +11,14 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
+import lombok.Data;
+
+/**
+ * This class stores all information about rooms for rehearsals,
+ * performances, etc.
+ *
+ */
+@Data
 @Entity (name = "Room")
 public class Room {
 	
@@ -28,49 +36,12 @@ public class Room {
 	@OneToMany (cascade = CascadeType.ALL)
 	private Set<Rehearsal> rehearsals;	
 	
+	@OneToMany (mappedBy = "room")
+	private Set<Performance> performances;
+	
 	public Room() {
 		this.rehearsals = new HashSet<Rehearsal>();
 		this.rehearsalTypes = new HashSet<Process>();
-	}
-	
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getLocation() {
-		return location;
-	}
-
-	public void setLocation(String location) {
-		this.location = location;
-	}
-
-	public Set<Process> getRehearsalTypes() {
-		return rehearsalTypes;
-	}
-
-	public void setRehearsalTypes(Set<Process> rehearsalTypes) {
-		this.rehearsalTypes = rehearsalTypes;
-	}
-
-	public Set<Rehearsal> getRehearsals() {
-		return rehearsals;
-	}
-
-	public void setRehearsals(Set<Rehearsal> rehearsals) {
-		this.rehearsals = rehearsals;
 	}
 	
 }

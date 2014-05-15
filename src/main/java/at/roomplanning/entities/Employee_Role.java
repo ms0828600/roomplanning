@@ -10,6 +10,15 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
+import lombok.Data;
+
+/**
+ * This class stores the relation between the role and the employee.
+ * Here we also have the attribute @evaluation where we can save
+ * how good an employee can play a role (e.g. an instrument)
+ *
+ */
+@Data
 @Entity(name = "Employee_Role")
 @Table(uniqueConstraints = @UniqueConstraint(columnNames = { "id_role",
 		"id_employee" }))
@@ -28,37 +37,5 @@ public class Employee_Role {
 	private Employee employee;
 
 	private int evaluation;
-
-	public int getEvaluation() {
-		return evaluation;
-	}
-
-	public void setEvaluation(int evaluation) {
-		this.evaluation = evaluation;
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public Role getRole() {
-		return role;
-	}
-
-	public void setRole(Role role) {
-		this.role = role;
-	}
-
-	public Employee getEmployee() {
-		return employee;
-	}
-
-	public void setEmployee(Employee employee) {
-		this.employee = employee;
-	}
 
 }

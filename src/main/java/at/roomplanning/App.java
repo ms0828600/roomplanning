@@ -38,7 +38,7 @@ public class App {
 				.createEntityManager();
 		TestData testData = new TestData(entityManager);
 		testData.insertProcessAndPerformanceTypes();
-		;
+		
 
 		Calendar calendar = GregorianCalendar.getInstance();
 		Performance performance_salome = new Performance();

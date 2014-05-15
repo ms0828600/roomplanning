@@ -11,6 +11,14 @@ import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import lombok.Data;
+
+/**
+ * This class stores the rehearsals of a performance,
+ * with the date, the room, and so on.
+ *
+ */
+@Data
 @Entity (name = "Rehearsal")
 public class Rehearsal {
 
@@ -33,48 +41,20 @@ public class Rehearsal {
 	@OneToOne
 	private Process rehearsalType;
 
-	public Long getId() {
-		return id;
-	}
-
 	public void setId(Long id) {
 		this.id = id;
-	}
-
-	public Date getDate() {
-		return date;
-	}
-
-	public void setDate(Date date) {
-		this.date = date;
-	}
-
-	public Performance getPerformance() {
-		return performance;
 	}
 
 	public void setPerformance(Performance performance) {
 		this.performance = performance;
 	}
 
-	public Room getRoom() {
-		return room;
-	}
-
 	public void setRoom(Room room) {
 		this.room = room;
 	}
 
-	public Process getRehearsalType() {
-		return rehearsalType;
-	}
-
 	public void setRehearsalType(Process rehearsalType) {
 		this.rehearsalType = rehearsalType;
-	}
-
-	public int getDuration() {
-		return duration;
 	}
 
 	public void setDuration(int duration) {
