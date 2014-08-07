@@ -36,7 +36,7 @@ public class App {
 				.createEntityManagerFactory("at.roomplanning");
 		EntityManager entityManager = entityManagerFactory
 				.createEntityManager();
-		TestData testData = new TestData(entityManager);
+		/*TestData testData = new TestData(entityManager);
 		testData.insertProcessAndPerformanceTypes();
 		
 
@@ -76,7 +76,7 @@ public class App {
 					+ start.getName() + " mit " + map.get(start.getName())
 					+ " Proben");
 			start = start.getNext();
-		}
+		}*/
 
 		try {
 			System.out.println("Type something to finish application.");
@@ -90,6 +90,8 @@ public class App {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		
+		
 
 		/*
 		 * query = entityManager .createQuery("Select p FROM Process p");

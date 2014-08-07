@@ -27,6 +27,9 @@ public class Play {
 
 	@Column (nullable = false)
 	private String name;	
+	
+	// aufbauzeit für das stück
+	private int maintanence_hours;
 
 	@ManyToOne
 	private PlayType playType;
