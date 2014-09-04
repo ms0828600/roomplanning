@@ -19,18 +19,18 @@ import lombok.Data;
  *
  */
 @Data
-@Entity(name = "Employee_Role")
-@Table(uniqueConstraints = @UniqueConstraint(columnNames = { "id_role",
+@Entity(name = "Employee_Function")
+@Table(uniqueConstraints = @UniqueConstraint(columnNames = { "id_function",
 		"id_employee" }))
-public class Employee_Role {
+public class Employee_Function {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
 	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "id_role", nullable = false)
-	private Role role;
+	@JoinColumn(name = "id_function", nullable = false)
+	private Function function;
 
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "id_employee", nullable = false)

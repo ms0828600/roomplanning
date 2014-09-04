@@ -55,7 +55,7 @@ public class Process {
 	private Set<Performance_Process> performances;		
 
 	@ManyToMany (cascade = CascadeType.ALL)
-	private Set<Role> roles;
+	private Set<Function> roles;
 	
 	@ManyToMany (cascade = CascadeType.ALL)
 	private Set<Room> rooms;	
@@ -65,7 +65,7 @@ public class Process {
 
 	public Process() {
 		this.previous = new HashSet<Process>();
-		this.roles = new HashSet<Role>();
+		this.roles = new HashSet<Function>();
 		this.rehearsals = new HashSet<Rehearsal>();
 		this.rooms = new HashSet<Room>();
 	}

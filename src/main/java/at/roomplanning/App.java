@@ -15,13 +15,13 @@ import javax.persistence.Persistence;
 import javax.persistence.Query;
 
 import at.roomplanning.entities.Employee;
-import at.roomplanning.entities.Employee_Role;
+import at.roomplanning.entities.Employee_Function;
 import at.roomplanning.entities.Performance;
 import at.roomplanning.entities.PerformanceType;
 import at.roomplanning.entities.Performance_Process;
 import at.roomplanning.entities.Rehearsal;
 import at.roomplanning.entities.Process;
-import at.roomplanning.entities.Role;
+import at.roomplanning.entities.Function;
 import at.roomplanning.entities.Room;
 import at.roomplanning.testdata.TestData;
 

@@ -8,7 +8,7 @@ import javax.persistence.EntityManager;
 import at.roomplanning.entities.Employee;
 import at.roomplanning.entities.PerformanceType;
 import at.roomplanning.entities.Process;
-import at.roomplanning.entities.Role;
+import at.roomplanning.entities.Function;
 
 public class TestData {
 	
@@ -23,27 +23,27 @@ public class TestData {
 		entityManager.getTransaction().begin();
 		
 		// Role/Saenger
-		Role tenor = new Role();
+		Function tenor = new Function();
 		tenor.setName("Tenor");
 
-		Role Bariton = new Role();
+		Function Bariton = new Function();
 		Bariton.setName("Bariton");
 
-		Role Bass = new Role();
+		Function Bass = new Function();
 		Bass.setName("Bass");
 
-		Role Sopran = new Role();
+		Function Sopran = new Function();
 		Sopran.setName("Sopran");
 
-		Role Alt = new Role();
+		Function Alt = new Function();
 		Alt.setName("Alt");
 
 		// Rolle/Funktion Orchestermusiker
 
-		Role Horn1 = new Role();
+		Function Horn1 = new Function();
 		Alt.setName("Horn1");
 
-		Role Horn2 = new Role();
+		Function Horn2 = new Function();
 		Alt.setName("Horn2");
 		
 		

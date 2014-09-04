@@ -19,8 +19,8 @@ import lombok.Data;
  *
  */
 @Data
-@Entity(name = "Role")
-public class Role {
+@Entity(name = "Function")
+public class Function {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -29,13 +29,13 @@ public class Role {
 	private String name;
 	
 	@OneToMany(mappedBy = "employee")
-	private Set<Employee_Role> employeeRoles;
+	private Set<Employee_Function> employeeFunction;
 	
 	@ManyToMany (cascade = CascadeType.ALL)
 	private Set<Process> rehearsalTypes;
 
-	public Role() {
-		this.employeeRoles = new HashSet<Employee_Role>(10);
+	public Function() {
+		this.employeeFunction = new HashSet<Employee_Function>(10);
 		this.rehearsalTypes = new HashSet<Process>();
 	}
 

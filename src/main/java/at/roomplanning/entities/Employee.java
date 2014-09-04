@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -34,8 +35,11 @@ public class Employee {
 	
 	//TODO: ENUM zugekauft/intern/...
 
-	@OneToMany(mappedBy = "role")
-	private Set<Employee_Role> employeeroles;
+	@OneToMany(mappedBy = "function")
+	private Set<Employee_Function> employeefunctions;
+	
+	@ManyToMany (cascade = CascadeType.ALL)
+	private Set<AlgorithmGroup> algorithmGroups;
 
 	@Temporal(TemporalType.DATE)
 	private Date birthDate;
@@ -44,7 +48,7 @@ public class Employee {
 	private Set<Performance> performances;
 
 	public Employee() {
-		this.employeeroles = new HashSet<Employee_Role>(3);
+		this.employeefunctions = new HashSet<Employee_Function>(3);
 		this.setPerformances(new HashSet<Performance>());
 	}
 
