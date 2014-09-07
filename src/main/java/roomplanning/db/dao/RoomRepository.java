@@ -1,9 +1,9 @@
 package roomplanning.db.dao;
 
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.PagingAndSortingRepository;
 
 import roomplanning.db.model.Room;
 
-public interface RoomRepository extends CrudRepository<Room, Long> {
+public interface RoomRepository extends PagingAndSortingRepository<Room, Long> {
 
 }
