@@ -5,18 +5,32 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 
 /**
  * http://stackoverflow.com/questions/5127129/mapping-many-to-many-association-
  * table-with-extra-columns
  * 
  */
-public class App {
+@Configuration
+@EnableAutoConfiguration
+@ComponentScan({"roomplanning"})
+public class App implements CommandLineRunner {
+	
+	@Autowired
+	private EntityManager entityManager;
+	
 	public static void main(String[] args) {
-		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("at.roomplanning");
-		EntityManager entityManager = entityManagerFactory.createEntityManager();
+		SpringApplication.run(App.class, args);
+	}
+
+	public void run(String... arg0) throws Exception {
 
 		try {
 			System.out.println("Type something to finish application.");
@@ -25,9 +39,9 @@ public class App {
 
 			System.out.println("Closing...");
 			entityManager.close();
-			entityManagerFactory.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+
 	}
 }
