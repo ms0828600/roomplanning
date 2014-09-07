@@ -1,4 +1,4 @@
-package at.roomplanning.entities;
+package roomplanning.entities;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;

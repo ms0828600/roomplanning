@@ -1,14 +1,14 @@
-package at.roomplanning.testdata;
+package roomplanning.testdata;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 import javax.persistence.EntityManager;
 
-import at.roomplanning.entities.Employee;
-import at.roomplanning.entities.PerformanceType;
-import at.roomplanning.entities.Process;
-import at.roomplanning.entities.Function;
+import roomplanning.entities.Employee;
+import roomplanning.entities.Function;
+import roomplanning.entities.PerformanceType;
+import roomplanning.entities.Process;
 
 public class TestData {
 	

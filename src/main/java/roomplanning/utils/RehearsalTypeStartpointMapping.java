@@ -1,4 +1,4 @@
-package at.roomplanning.utils;
+package roomplanning.utils;
 
 
 public class RehearsalTypeStartpointMapping {

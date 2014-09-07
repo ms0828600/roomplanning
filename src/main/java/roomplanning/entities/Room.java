@@ -1,4 +1,4 @@
-package at.roomplanning.entities;
+package roomplanning.entities;
 
 import java.util.HashSet;
 import java.util.Set;

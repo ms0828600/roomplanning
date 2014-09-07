@@ -1,4 +1,4 @@
-package at.roomplanning;
+package roomplanning;
 
 import java.io.BufferedReader;
 import java.io.IOException;

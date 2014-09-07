@@ -1,4 +1,4 @@
-package at.roomplanning.entities;
+package roomplanning.entities;
 
 import java.util.Set;
 
@@ -7,19 +7,17 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 import lombok.Data;
 
 /**
- * This class stores the name of the opera or ballett
- * @author martin
+ * This class stores the play-type (e.g. ballet, opera, musical,...)
  *
  */
 @Data
-@Entity (name = "Play")
-public class Play {
+@Entity (name = "PlayType")
+public class PlayType {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -28,13 +26,7 @@ public class Play {
 	@Column (nullable = false)
 	private String name;	
 	
-	// aufbauzeit für das stück
-	private int maintanence_hours;
-
-	@ManyToOne
-	private PlayType playType;
-	
-	@OneToMany (mappedBy = "play")
-	private Set<Performance> performances;
+	@OneToMany (mappedBy = "playType")
+	private Set<Play> playList;
 	
 }
