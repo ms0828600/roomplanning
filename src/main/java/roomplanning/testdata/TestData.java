@@ -5,10 +5,10 @@ import java.util.GregorianCalendar;
 
 import javax.persistence.EntityManager;
 
-import roomplanning.db.entities.Employee;
-import roomplanning.db.entities.Function;
-import roomplanning.db.entities.PerformanceType;
-import roomplanning.db.entities.Process;
+import roomplanning.db.model.Employee;
+import roomplanning.db.model.Function;
+import roomplanning.db.model.PerformanceType;
+import roomplanning.db.model.Process;
 
 public class TestData {
 	

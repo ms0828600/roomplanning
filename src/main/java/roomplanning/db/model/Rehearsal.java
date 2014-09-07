@@ -1,4 +1,4 @@
-package roomplanning.db.entities;
+package roomplanning.db.model;
 
 import java.util.Date;
 

@@ -1,4 +1,4 @@
-package roomplanning.db.entities;
+package roomplanning.db.model;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -14,29 +14,34 @@ import javax.persistence.OneToMany;
 import lombok.Data;
 
 /**
- * This class stores the roles of a system like singer, instruments, etc.
- * and the relation to the employees who can play this role.
+ * This class stores all information about rooms for rehearsals,
+ * performances, etc.
  *
  */
 @Data
-@Entity(name = "Function")
-public class Function {
-
+@Entity (name = "Room")
+public class Room {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
+	private Long id;	
 
 	private String name;
 	
-	@OneToMany(mappedBy = "employee")
-	private Set<Employee_Function> employeeFunction;
+	private String location;
 	
 	@ManyToMany (cascade = CascadeType.ALL)
 	private Set<Process> rehearsalTypes;
 
-	public Function() {
-		this.employeeFunction = new HashSet<Employee_Function>(10);
+	@OneToMany (cascade = CascadeType.ALL)
+	private Set<Rehearsal> rehearsals;	
+	
+	@OneToMany (mappedBy = "room")
+	private Set<Performance> performances;
+	
+	public Room() {
+		this.rehearsals = new HashSet<Rehearsal>();
 		this.rehearsalTypes = new HashSet<Process>();
 	}
-
+	
 }

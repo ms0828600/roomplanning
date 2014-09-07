@@ -13,6 +13,8 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
+import roomplanning.db.dao.EmployeeRepository;
+
 /**
  * http://stackoverflow.com/questions/5127129/mapping-many-to-many-association-
  * table-with-extra-columns
@@ -25,6 +27,9 @@ public class App implements CommandLineRunner {
 	
 	@Autowired
 	private EntityManager entityManager;
+	
+	@Autowired 
+	EmployeeRepository repo;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(App.class, args);
