@@ -1,0 +1,495 @@
+1;Rainer;Küchl;Konzertmeister
+2;Volkhard;Steude;Konzertmeister
+3;Rainer;Honeck;Konzertmeister
+4;Albena;Danailova;Konzertmeister
+5;Eckhard;Seifert;1. Violine
+6;Erich;Schagerl;1.Violine
+7;Andreas;Großbauer;1. Violine
+8;Hubert;Kroisamer;1. Violine
+9;Milan;Setena;1.Violine
+10;Pavel;Kuzmichev;1. Violine
+11;Josef;Hell;1. Violine
+12;Martin;Kubik;1.Violine
+13;Olesya;Kurylyak;1. Violine
+14;Jun;Keller;1. Violine
+15;Martin;Zalodek;1.Violine
+16;Maxim;Brilinsky;1. Violine
+17;Daniel;Froschauer;1. Violine
+18;Kirill;Kobantschenko;1.Violine
+19;Thomas;Küblböck;1. Violine
+20;Günther;Seifert;1. Violine
+21;Wilfried;Hedenborg;1.Violine
+22;Alina;Pinchas;1. Violine
+23;Clemens;Hellsberg;1. Violine
+24;Johannes;Tomböck;1.Violine
+25;Bernhard;Biberauer;1. Violine
+26;Isabelle;Ballot;1. Violine
+27;Raimund;Lissy;2. Violine
+28;Tibor;Kovác;2. Violine
+29;Christoph;Koncz;2. Violine
+30;Gerald;Schubert;2. Violine
+31;René;Staar;2. Violine
+32;Helmut;Zehetner;2. Violine
+33;George;Fritthum;2. Violine
+34;exander;Steinberger;2. Violine
+35;Harald;Krumpöck;2. Violine
+36;Michael;Kostka;2. Violine
+37;Charles;Benedikt;2. Violine
+38;Marian;Lesko;2. Violine
+39;Johannes;Kostner;2. Violine
+40;Martin;Klimek;2. Violine
+41;Jewgenij;Andrusenko;2. Violine
+42;Shkelzen;Doli;2. Violine
+43;Dominik;Hellsberg;2. Violine
+44;Holger;Groh;2. Violine
+45;Patricia;Koll;2. Violine
+46;Heinrich;Koll;Solo Bratsche
+47;Tobias;Lea;Solo Bratsche
+48;Christian;Frohn;Solo Bratsche
+49;Wolf-Dieter;Rath;Bratsche
+50;Robert;Bauerstatter;Bratsche
+51;Gerhard;Marschner;Bratsche
+52;Dr.;Mario;Bratsche
+53;Martin;Lemberg;Bratsche
+54;Elmar;Landerer;Bratsche
+55;Ursula;Plaichinger;Bratsche
+56;Innokenti;Grabko;Bratsche
+57;Michael;Strasser;Bratsche
+58;Thilo;Fechner;Bratsche
+59;Thomas;Hajek;Bratsche
+60;Daniela;Ivanova;Bratsche
+61;Sebastian;Führlinger;Bratsche
+62;Tamás;Varga;Solo Cello
+63;Robert;Nagy;Solo Cello
+64;Peter;Somodari;Solo Cello
+65;Friedrich;Dolezal;Cello
+66;Raphael;Flieder;Cello
+67;Csaba;Bornemisza;Cello
+68;Gerhard;Iberer;Cello
+69;Wolfgang;Härtel;Cello
+70;Ursula;Wex;Cello
+71;Eckhard;Schwarz-Schulz;Cello
+72;Sebastian;Bru;Cello
+73;Stefan;Gartmayer;Cello
+74;Edison;Pashko;Cello
+75;Bernhard;Naoki ;Cello
+76;Herbert;Mayr;Solo Kontrabass
+77;Christoph;Wimmer;Solo Kontrabass
+78;Ödön;Racz;Solo Kontrabass
+79;Jerzy;Dybal;Kontrabass
+80;Iztok;Hrastnik;Kontrabass
+81;Alexander;Matschinegg;Kontrabass
+82;Michael;Bladerer;Kontrabass
+83;Bartosz;Sikorski;Kontrabass
+84;Jan-Georg;Leser;Kontrabass
+85;Jedrzej;Gorski;Kontrabass
+86;Filip;Waldmann;Kontrabass
+87;Elias;Mai;Kontrabass
+88;Dominik;Neunteufel;Kontrabass
+89;Charlotte;Balzereit-Zell;Harfe
+90;Anneleen;Lenaerts;Harfe
+91;Dieter;Flury;Flöte
+92;Walter;Auer;Flöte
+93;Karl-Heinz;Schütz;Flöte
+94;Günter;Federsel;Flöte
+95;Wolfgang;Breinschmid;Flöte
+96;Karin;Bonelli;Flöte
+97;Martin;Gabriel;Oboe
+98;Clemens;Horak;Oboe
+99;Harald;Hörth;Oboe
+100;Alexander;Öhlberger;Oboe
+101;Wolfgang;Plank;Oboe
+102;Herbert;Maderthaner;Oboe
+103;Ernst;Ottensamer;Klarinette
+104;Matthias;Schorn;Klarinette
+105;Daniel;Ottensamer;Klarinette
+106;Norbert;Täubl;Klarinette
+107;Johann;Hindler;Klarinette
+108;Andreas;Wieser;Klarinette
+109;Michael;Werba;Fagott
+110;Stepan;Turnovsky;Fagott
+111;Harald;Müller;Fagott
+112;Reinhard;Öhlberger;Fagott
+113;Wolfgang;Koblitz;Fagott
+114;Benedikt;Dinkhauser;Fagott
+115;Ronald;Janezic;Horn
+116;Lars Michael;Stransky;Horn
+117;Josef;Reif;Horn
+118;Sebastian;Mayr;Horn
+119;Wolfgang;Lintner;Horn
+120;Jan;Jankovic;Horn
+121;Wolfgang;Vladar;Horn
+122;Thomas;Jöbstl;Horn
+123;Wolfgang;Tomböck;Horn
+124;Manuel;Huber;Horn
+125;Gotthard;Eder;Trompete
+126;Martin;Mühlfellner;Trompete
+127;Stefan;Haimel;Trompete
+128;Hans Peter;Schuh;Trompete
+129;Reinhold;Ambros;Trompete
+130;Jürgen;Pöchhaker;Trompete
+131;Dietmar;Küblböck;Posaune
+132;Dominik;Schnaitt;Posaune
+133;Wolfgang;Strasser;Posaune
+134;Johann;Ströcker;Posaune
+135;Mark;Gaal;Posaune
+136;Paul Adolf;Halwax;Tuba
+137;Christoph;Gigler;Tuba
+138;Bruno;Hartl;Pauke
+139;Anton;Mittermayr;Pauke
+140;Erwin;Falk;Pauke
+141;Klaus;Zauner;Schlagwerk
+142;Oliver;Madas;Schlagwerk
+143;Benjamin;Schmidinger;Schlagwerk
+144;Thomas;Lechner;Schlagwerk
+145;Thomas;Adès;Dirigenten
+146;Alain;Altinoglu;Dirigenten
+147;Philippe;Auguin;Dirigenten
+148;Bertrand DE ;Billy;Dirigenten
+149;Semyon;Bychkov;Dirigenten
+150;Bruno;Campanella;Dirigenten
+151;Paolo;Carignani;Dirigenten
+152;Frédéric;Chaslin;Dirigenten
+153;Myung-Whun;Chung;Dirigenten
+154;Paul;Connelly;Dirigenten
+155;Christoph;Eschenbach;Dirigenten
+156;Dan;Ettinger;Dirigenten
+157;Adam;Fischer;Dirigenten
+158;Guillermo García;Calvo;Dirigenten
+159;Sascha;Goetzel;Dirigenten
+160;Vinzenz;Praxmarer;Dirigenten
+161;Gerrit;Prießnitz;Dirigenten
+162;Vello;Pähn;Dirigenten
+163;Simon;Rattle;Dirigenten
+164;Kevin;Rhodes;Dirigenten
+165;Peter;Schneider;Dirigenten
+166;Jean-Christophe;Spinosi;Dirigenten
+167;Christian;Thielemann;Dirigenten
+168;GMD Franz;Welser-Möst;Dirigenten
+169;Johannes;Wildner;Dirigenten
+170;Simone;Young;Dirigenten
+171;Andriy;Yurkevych;Dirigenten
+172;Evelino;Pidò;Dirigenten
+173;Michael;Güttler;Dirigenten
+174;Johannes;Haider;Dirigenten
+175;Alexander;Ingram;Dirigenten
+176;Graeme;Jenkins;Dirigenten
+177;Koen;Kessels;Dirigenten
+178;Louis;Langrée;Dirigenten
+179;Peter Ernst;Lassen;Dirigenten
+180;Markus;Lehtinen;Dirigenten
+181;Marko;Letonja;Dirigenten
+182;Jesús;López-Cobos;Dirigenten
+183;Cornelius;Meister;Dirigenten
+184;Ingo;Metzmacher;Dirigenten
+185;Tomas;Netopil;Dirigenten
+186;Yannick;Nézet-Séguin;Dirigenten
+187;Kirill;Petrenko;Dirigenten
+188;ldar;Abdrazakov;Sänger
+189;Wolfgang;Ablinger-Sperrhacke;Sänger
+190;Roberto;Alagna;Sänger
+191;Celso;Albelo;Sänger
+192;Carlos;Alvarez;Sänger
+193;Ain;Anger;Sänger
+194;Aleksandrs;Antonenko;Sänger
+195;Alessio;Arduini;Sänger
+196;Janina;Baechle;Sänger
+197;Agnes;Baltsa;Sänger
+198;Wolfgang;Bankl;Sänger
+199;Juliane;Banse;Sänger
+200;Gun-Brit;Barkmin;Sänger
+201;Piotr;Beczala;Sänger
+202;Maria;Bengtsson;Sänger
+203;Gabriel;Bermudez;Sänger
+204;Olga;Bezsmertna;Sänger
+205;Monika;Bohinec;Sänger
+206;Anna;Bonitatibus;Sänger
+207;Johan;Botha;Sänger
+208;Benjamin;Bruns;Sänger
+209;Javier;Camarena;Sänger
+210;Fabio;Capitanucci;Sänger
+211;Marco;Caria;Sänger
+212;Charles;Castronovo;Sänger
+213;Sorin;Coliban;Sänger
+214;Andreas;Conrad;Sänger
+215;Alice;Coote;Sänger
+216;Alessandro;Corbelli;Sänger
+217;Stephen;Costello;Sänger
+218;José;Cura;Sänger
+219;Ildebrando;D'Arcangelo;Sänger
+220;Luciana;D'Intino;Sänger
+221;Diana;Damrau;Sänger
+222;Boaz;Daniel;Sänger
+223;David;Daniels;Sänger
+224;Elizabeth;DeShong;Sänger
+225;Angela;Denoke;Sänger
+226;Misha;Didyk;Sänger
+227;Andrzej;Dobber;Sänger
+228;Mihail;Dogotari;Sänger
+229;Albert;Dohmen;Sänger
+230;Plácido;Domingo;Sänger
+231;Dan;Dumitrescu;Sänger
+232;Thomas;Ebenstein;Sänger
+233;Markus;Eiche;Sänger
+234;Donna;Ellen;Sänger
+235;Norbert;Ernst;Sänger
+236;Adrian;Eröd;Sänger
+237;Hila;Fahima;Sänger
+238;Daniela;Fally;Sänger
+239;Norma;Fantini;Sänger
+240;Marco;Felice;Sänger
+241;Gerald;Finley;Sänger
+242;Juan;Flórez;Sänger
+243;Rachel;Frenkel;Sänger
+244;Barbara;Frittoli;Sänger
+245;Ferruccio;Furlanetto;Sänger
+246;George;Gagnidze;Sänger
+247;Elina;Garanča;Sänger
+248;Aida;Garifullina;Sänger
+249;Christian;Gerhaher;Sänger
+250;Annika;Gerhards;Sänger
+251;Hibla;Gerzmava;Sänger
+252;Angela;Gheorghiu;Sänger
+253;Marcello;Giordani;Sänger
+254;Massimo;Giordano;Sänger
+255;Stephen;Gould;Sänger
+256;Ryan;Green;Sänger
+257;Margarita;Gritskova;Sänger
+258;Günther;Groissböck;Sänger
+259;Edita;Gruberova;Sänger
+260;Maria;Guleghina;Sänger
+261;Regine;Hangler;Sänger
+262;Anja;Harteros;Sänger
+263;Anita;Hartig;Sänger
+264;Barbara;Haveman;Sänger
+265;Hui;He;Sänger
+266;Alan;Held;Sänger
+267;Ulrike;Helzel;Sänger
+268;Jane;Henschel;Sänger
+269;Evelyn;Herlitzius;Sänger
+270;Sebastian;Holecek;Sänger
+271;Il;Hong;Sänger
+272;Stephanie;Houtzeel;Sänger
+273;Dmitri;Hvorostovsky;Sänger
+274;Soile;Isokoski;Sänger
+275;Simina;Ivan;Sänger
+276;Ermonela;Jaho;Sänger
+277;Peter;Jelosits;Sänger
+278;Dalibor;Jenis;Sänger
+279;Hans;Kammerer;Sänger
+280;Mikhail;Kazakov;Sänger
+281;Simon;Keenlyside;Sänger
+282;Ilseyar;Khayrullova;Sänger
+283;Matthias;Klink;Sänger
+284;Hyuna;Ko;Sänger
+285;Benedikt;Kobel;Sänger
+286;Sophie;Koch;Sänger
+287;Wolfgang;Koch;Sänger
+288;Pavel;Kolgatin;Sänger
+289;Tomasz;Konieczny;Sänger
+290;Dmitry;Korchak;Sänger
+291;Maija;Kovalevska;Sänger
+292;Magdalena;Kožená;Sänger
+293;Nadia;Krasteva;Sänger
+294;James;Kryshak;Sänger
+295;Adriana;Kucerová;Sänger
+296;Elisabeth;Kulman;Sänger
+297;Zoryana;Kushpler;Sänger
+298;Genia;Kühmeier;Sänger
+299;Petra;Lang;Sänger
+300;Anna;Larsson;Sänger
+301;Isabel;Leonard;Sänger
+302;Kathryn;Lewek;Sänger
+303;Jorge;León;Sänger
+304;Lise;Lindstrom;Sänger
+305;Marjana;Lipovšek;Sänger
+306;Herbert;Lippert;Sänger
+307;Audrey;Luna;Sänger
+308;Aquiles;Machado;Sänger
+309;Ambrogio;Maestri;Sänger
+310;Serena;Malfi;Sänger
+311;Juliette;Mars;Sänger
+312;Iride;Martínez;Sänger
+313;Peter;Matić;Sänger
+314;Peter;Mattei;Sänger
+315;Elena;Maximova;Sänger
+316;Lucas;Meachem;Sänger
+317;Ricarda;Merbeth;Sänger
+318;Stephen;Milling;Sänger
+319;Alexandru;Moisiuc;Sänger
+320;Janusz;Monarcha;Sänger
+321;Erin;Morley;Sänger
+322;Valentina;Nafornita;Sänger
+323;Catherine;Naglestad;Sänger
+324;Anna;Netrebko;Sänger
+325;Leo;Nucci;Sänger
+326;Camilla;Nylund;Sänger
+327;Kristine;Opolais;Sänger
+328;Carlos;Osuna;Sänger
+329;Anne;Otter;Sänger
+330;Jongmin;Park;Sänger
+331;Herwig;Pecoraro;Sänger
+332;Marcus;Pelz;Sänger
+333;David;Pershall;Sänger
+334;Michele;Pertusi;Sänger
+335;George;Petean;Sänger
+336;Patricia;Petibon;Sänger
+337;Mikhail;Petrenko;Sänger
+338;Adrianne;Pieczonka;Sänger
+339;Saimir;Pirgu;Sänger
+340;Luca;Pisaroni;Sänger
+341;Adam;Plachetka;Sänger
+342;Dmytro;Popov;Sänger
+343;Giacomo;Prestia;Sänger
+344;Thomas;Quasthoff;Sänger
+345;Sondra;Radvanovsky;Sänger
+346;Ildiko;Raimondi;Sänger
+347;Lydia;Rathkolb;Sänger
+348;Marina;Rebeka;Sänger
+349;Chen;Reiss;Sänger
+350;Sae;Rim;Sänger
+351;Michael;Roider;Sänger
+352;Peter;Rose;Sänger
+353;Paolo;Rumetz;Sänger
+354;Kurt;Rydl;Sänger
+355;Michael;Schade;Sänger
+356;Jochen;Schmeckenbecher;Sänger
+357;Anne;Schwanewilms;Sänger
+358;Peter;Seiffert;Sänger
+359;Franz-Josef;Selig;Sänger
+360;Ekaterina;Semenchuk;Sänger
+361;Martina;Serafin;Sänger
+362;Neil;Shicoff;Sänger
+363;Peter;Simonischek;Sänger
+364;Antonino;Siragusa;Sänger
+365;Robert;Smith;Sänger
+366;Alfred;Sramek;Sänger
+367;Nina;Stemme;Sänger
+368;Krassimira;Stoyanova;Sänger
+369;Falk;Struckmann;Sänger
+370;Marian;Talaba;Sänger
+371;Bryn;Terfel;Sänger
+372;John;Tessier;Sänger
+373;Ludovic;Tezier;Sänger
+374;Iréne;Theorin;Sänger
+375;Ileana;Tonca;Sänger
+376;Aura;Twarowska;Sänger
+377;Tómas;Tómasson;Sänger
+378;Clemens;Unterreiner;Sänger
+379;Béatrice;Uria-Monzon;Sänger
+380;Ramón;Vargas;Sänger
+381;Franco;Vassallo;Sänger
+382;Christopher;Ventris;Sänger
+383;Michael;Volle;Sänger
+384;Marco;Vratogna;Sänger
+385;Caroline;Wenborne;Sänger
+386;Markus;Werba;Sänger
+387;Carole;Wilson;Sänger
+388;Lars;Woldt;Sänger
+389;Jinxu;Xiahou;Sänger
+390;Tae;Yang;Sänger
+391;Kwangchul;Youn;Sänger
+392;Maria;Bierbaumer;Chor
+393;BA;Exner;Chor
+394;Renate;Gutsch;Chor
+395;Jon-Won;Han;Chor
+396;Erika;Hatházi;Chor
+397;Renate;Hecht;Chor
+398;Mag.;Hofmann;Chor
+399;Secil;Ilker;Chor
+400;Maria;Karrer;Chor
+401;Younghee;Ko;Chor
+402;Mag.;Köck;Chor
+403;Mag.;Maller;Chor
+404;Kyoko;Nukumi;Chor
+405;Sylvia;Panzenböck;Chor
+406;Ingrid;Vadehra;Chor
+407;Mag.;Auer;Chor
+408;Anna;Birnbauer;Chor
+409;Denisa;Danielová;Chor
+410;Maria;Gusenleitner;Chor
+411;Regina;Knauer;Chor
+412;Kaya;Last;Chor
+413;So;Lee;Chor
+414;Mag.;Reder;Chor
+415;Felicitas;Thyringer;Chor
+416;Elisabeth;Vloedt;Chor
+417;Ulrike;Erfurt;Chor
+418;Senta;Fischer;Chor
+419;Mag.;Leibnitz;Chor
+420;Mag.;Monarcha;Chor
+421;Mag.;Reiter;Chor
+422;Marianne;Sattmann;Chor
+423;Mag.;Sonnleithner;Chor
+424;Zsuzsanna;Szábó;Chor
+425;Karin;Wieser;Chor
+426;Dr.;Zurmann-Marian;Chor
+427;Gabriella;Bessenyei;Chor
+428;Mag.;Götz;Chor
+429;Arina;Holecek;Chor
+430;Sabine;Kogler;Chor
+431;Hyun-Sook;More;Chor
+432;Martina;Parzer;Chor
+433;Evelin;Saul;Chor
+434;Karen;Schubert;Chor
+435;Eva;Schweiger;Chor
+436;Elisabeth;Strenn;Chor
+437;Daniela;Wagner;Chor
+438;Peter;Fraiss;Chor
+439;Dr.;Großrubatscher;Chor
+440;Wolfgang;Holzherr;Chor
+441;Burkhard;Höft;Chor
+442;Mag.;Krzyszkowski;Chor
+443;Roman;Lauder;Chor
+444;Taner;Orhan;Chor
+445;André;Potgieter;Chor
+446;Won-Cheol;Song;Chor
+447;Zsolt;Temes;Chor
+448;Roland;Winkler;Chor
+449;Oleg;Zalytskiy;Chor
+450;Hakki;Özpinar;Chor
+451;Wolfram;Derntl;Chor
+452;Franz;Gruber;Chor
+453;Christoph;Hara;Chor
+454;Meng-Chieh;Ho;Chor
+455;Michael;Knapp;Chor
+456;Thomas;Köber;Chor
+457;Dritan;Luca;Chor
+458;Daniel;Lökös;Chor
+459;Martin;Müller;Chor
+460;Gerhard;Reiterer;Chor
+461;Gottfried;Stifter;Chor
+462;Hacik;Bayvertian;Chor
+463;Wolfgang;Equiluz;Chor
+464;Johannes;Gisser;Chor
+465;Mag.;Huber;Chor
+466;Hiroyuki;Ijichi;Chor
+467;Jeong-Ho;Kim;Chor
+468;Karl;Nebenführ;Chor
+469;Friedrich;Springer;Chor
+470;Martin;Thyringer;Chor
+471;Mag.;Tomaschitz;Chor
+472;Michael;Wilder;Chor
+473;Liviu;Burz;Chor
+474;Michael;Kuchar;Chor
+475;Csaba;Markovits;Chor
+476;Mag.;Musger;Chor
+477;Jaroslav;Pehal;Chor
+478;Mag.;Pfeiffer;Chor
+479;Mag.;Rieger;Chor
+480;Wataru;Sano;Chor
+481;Oleg;Savran;Chor
+482;Mario;Steller;Chor
+483;Hermann;Thyringer;Chor
+484;Ion;Tibrea;Chor
+485;David;Aronson;Pianisten
+486;Gábor;Bartinai;Pianisten
+487;Luisella;Germano;Pianisten
+488;Stephen;Hopkins;Pianisten
+489;Mats;Knutsson;Pianisten
+490;Thomas;Lausmann;Pianisten
+491;Kristin;Okerlund;Pianisten
+492;James;Pearson;Pianisten
+493;Cécile;Restier;Pianisten
+494;Mag.;Schlüsselmayr;Pianisten
+495;Jendrik;Springer;Pianisten
