@@ -81,3 +81,24 @@ foreach ($data as $k) {
 	if (count($v) < 4) continue;
 	echo "INSERT INTO `Performance` (id, play_id, date, performanceType_id) VALUES ({$v[0]}, {$v[1]}, STR_TO_DATE('{$v[2]}', '%d.%m.%Y'), {$v[3]});\n";
 }
+
+
+// Employee_Performance1-10
+for ($i = 1; $i <= 10; $i++) {
+	$data = file_get_contents("employee_performance$i.csv");
+	$data = explode("\n", $data);
+	foreach ($data as $k) {
+		$v = explode(";", db_escape($k));
+		if (count($v) < 2) continue;
+		echo "INSERT INTO `Performance_Employee` (performances_id, employees_id) VALUES ({$v[1]}, {$v[0]});\n";
+	}
+}
+
+// Rooms
+$data = file_get_contents("rooms.csv");
+$data = explode("\n", $data);
+foreach ($data as $k) {
+	$v = explode(";", db_escape($k));
+	if (count($v) < 2) continue;
+	echo "INSERT INTO `Room` (id, name) VALUES ({$v[0]}, '{$v[1]}');\n";
+}
