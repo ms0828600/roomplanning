@@ -67,7 +67,7 @@ public class Algorithm implements InitializingBean {
 	public FoodSource buildFoodSource(Process process) {
 		HashMap<Long, Integer> food = new HashMap<>();
 		Long caps = 0L; 
-		for (Function func : process.getRoles()) {
+		for (Function func : process.getFunctions()) {
 			Long currentValue = functionMasks.get(func.getId());
 			caps |= currentValue;
 			if (food.containsKey(currentValue)) {
